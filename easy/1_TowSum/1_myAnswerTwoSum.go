@@ -8,7 +8,7 @@ package leetcode
 import "sort"
 
 /*
-解法：首尾递进查找
+解法: 首尾递进查找
 结果: 执行用时 :4 ms 内存消耗 :3.1 MB
 */
 

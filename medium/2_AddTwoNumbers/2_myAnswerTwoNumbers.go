@@ -16,7 +16,7 @@ type ListNode struct {
 }
 
 /*
-解法：链表相当于把一个数的各位逆序处理，所以可以正序遍历并对应相加，当l1或l2其中一条链表遍历完，直接让l3.Next指向未结束的链表，注意进位。
+解法: 链表相当于把一个数的各位逆序处理，所以可以正序遍历并对应相加，当l1或l2其中一条链表遍历完，直接让l3.Next指向未结束的链表，注意进位。
 结果: 执行用时 :4 ms 内存消耗 :5 MB
 */
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
