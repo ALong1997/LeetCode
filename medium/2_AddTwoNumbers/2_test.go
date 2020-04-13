@@ -55,16 +55,15 @@ func Test_Problem1(t *testing.T) {
 
 
 	qs := []question2{{
-		para2: para2{l1_1, l2_1},
-		ans2:  ans2{a12_1},
-	}, {
-		para2: para2{l3_1, l4_1},
-		ans2:  ans2{a34_1},
-	}, {
-		para2: para2{l5_1, l6_1},
-		ans2:  ans2{a56_1},
-	},
-	}
+			para2: para2{l1_1, l2_1},
+			ans2:  ans2{a12_1},
+		}, {
+			para2: para2{l3_1, l4_1},
+			ans2:  ans2{a34_1},
+		}, {
+			para2: para2{l5_1, l6_1},
+			ans2:  ans2{a56_1},
+		}}
 
 	fmt.Printf("------------------------Leetcode Problem 2------------------------\n")
 
