@@ -9,6 +9,8 @@ package leetcode
  */
 /*
 解法: 思路和我基本是一样的，代码比我的简洁很多，但是这份答案对于一长一短的情况处理没我的好
+
+
 结果: 执行用时 :8 ms 内存消耗 :4.6 MB
 */
 func referenceAddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
