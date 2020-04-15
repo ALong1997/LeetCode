@@ -19,7 +19,7 @@ type ans4 struct {
 	ans float64
 }
 
-func Test_Problem1(t *testing.T) {
+func Test_Problem4(t *testing.T) {
 	qs := []question4{{
 		para4: para4{[]int{1, 3}, []int{2}},
 		ans4:  ans4{2.0},

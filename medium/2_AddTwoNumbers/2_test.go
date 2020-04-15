@@ -19,7 +19,7 @@ type ans2 struct {
 	ans *ListNode
 }
 
-func Test_Problem1(t *testing.T) {
+func Test_Problem2(t *testing.T) {
 	l1_3 := &ListNode{3, nil}
 	l1_2 := &ListNode{4, l1_3}
 	l1_1 := &ListNode{2, l1_2}
