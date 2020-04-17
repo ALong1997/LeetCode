@@ -31,8 +31,9 @@ func Test_Problem5(t *testing.T) {
 
 	for _, q := range qs {
 		a, p := q.ans5, q.para5
-		fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, longestPalindrome(p.s), a)
-		// fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, referenceFindMedianSortedArrays(p.nums1, p.nums2), a)
+		// fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, longestPalindrome(p.s), a)
+		// fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, referenceLongestPalindrome(p.s), a)
+		fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, reference2LongestPalindrome(p.s), a)
 	}
 	fmt.Printf("\n")
 }
