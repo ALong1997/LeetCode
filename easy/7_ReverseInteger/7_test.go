@@ -18,7 +18,7 @@ type ans7 struct {
 	ans int
 }
 
-func Test_Problem6(t *testing.T) {
+func Test_Problem7(t *testing.T) {
 	qs := []question7{{
 		para7: para7{123},
 		ans7:  ans7{321},
@@ -30,7 +30,7 @@ func Test_Problem6(t *testing.T) {
 		ans7:  ans7{21},
 	}}
 
-	fmt.Printf("------------------------Leetcode Problem 6------------------------\n")
+	fmt.Printf("------------------------Leetcode Problem 8------------------------\n")
 
 	for _, q := range qs {
 		a, p := q.ans7, q.para7
