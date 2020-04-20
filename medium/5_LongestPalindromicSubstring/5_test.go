@@ -15,7 +15,7 @@ type para5 struct {
 }
 
 type ans5 struct {
-	s []string
+	ans []string
 }
 
 func Test_Problem5(t *testing.T) {
