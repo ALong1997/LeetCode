@@ -33,7 +33,7 @@ func Test_Problem14(t *testing.T) {
 		ans14:  ans14{""},
 	}}
 
-	fmt.Printf("------------------------Leetcode Problem 13------------------------\n")
+	fmt.Printf("------------------------Leetcode Problem 14------------------------\n")
 
 	for _, q := range qs {
 		a, p := q.ans14, q.para14
