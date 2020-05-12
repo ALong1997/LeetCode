@@ -55,7 +55,7 @@ func Test_Problem23(t *testing.T) {
 			e.printListNode()
 		}
 		fmt.Print("       【output】:")
-		referenceMergeKLists(p.lists).printListNode()
+		reference2mergeKLists(p.lists).printListNode()
 		fmt.Print("       【answer】:")
 		a.ans.printListNode()
 		fmt.Printf("\n")
