@@ -5,45 +5,48 @@ import (
 	"testing"
 )
 
-type question24 struct {
-	para24
-	ans24
+type question25 struct {
+	para25
+	ans25
 }
 
-type para24 struct {
+type para25 struct {
 	head *ListNode
+	k int
 }
 
-type ans24 struct {
+type ans25 struct {
 	ans *ListNode
 }
 
-func Test_Problem24(t *testing.T) {
+func Test_Problem25(t *testing.T) {
 
-	l1_4 := &ListNode{4, nil}
+	l1_5 := &ListNode{5, nil}
+	l1_4 := &ListNode{4, l1_5}
 	l1_3 := &ListNode{3, l1_4}
 	l1_2 := &ListNode{2, l1_3}
 	l1_1 := &ListNode{1, l1_2}
 
-	a1_4 := &ListNode{3, nil}
+	a1_5 := &ListNode{5, nil}
+	a1_4 := &ListNode{3, a1_5}
 	a1_3 := &ListNode{4, a1_4}
 	a1_2 := &ListNode{1, a1_3}
 	a1_1 := &ListNode{2, a1_2}
 
 
-	qs := []question24{{
-		para24: para24{l1_1},
-		ans24:  ans24{a1_1},
+	qs := []question25{{
+		para25: para25{l1_1, 2},
+		ans25:  ans25{a1_1},
 	}}
 
 	fmt.Printf("------------------------Leetcode Problem 24------------------------\n")
 
 	for _, q := range qs {
-		a, p := q.ans24, q.para24
+		a, p := q.ans25, q.para25
 		fmt.Print("【input】:")
 		p.head.printListNode()
 		fmt.Print("       【output】:")
-		swapPairs(p.head).printListNode()
+		reverseKGroup(p.head, p.k).printListNode()
 		fmt.Print("       【answer】:")
 		a.ans.printListNode()
 		fmt.Printf("\n")
