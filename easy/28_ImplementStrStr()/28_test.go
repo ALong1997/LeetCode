@@ -32,8 +32,8 @@ func Test_Problem28(t *testing.T) {
 
 	for _, q := range qs {
 		a, p := q.ans28, q.para28
-		fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, strStr(p.aystack, p.needle), a)
-		// fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, referenceMyAtoi(p.str), a)
+		//fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, strStr(p.aystack, p.needle), a)
+		fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, referenceStrStr(p.aystack, p.needle), a)
 	}
 	fmt.Printf("\n")
 }
