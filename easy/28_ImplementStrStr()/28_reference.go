@@ -98,9 +98,11 @@ func referenceStrStr(haystack string, needle string) int {
 func hashStr(sep string) (uint32, uint32) {
 	hash := uint32(0)
 	for i := 0; i < len(sep); i++ {
+		// 核心算法是这一句(FNV Hash算法)
 		hash = hash*primeRK + uint32(sep[i])
 	}
 	var pow, sq uint32 = 1, primeRK
+	// pow = primeRK^(len(seq))
 	for i := len(sep); i > 0; i >>= 1 {
 		if i&1 != 0 {
 			pow *= sq
