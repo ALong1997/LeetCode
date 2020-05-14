@@ -47,21 +47,37 @@ function RabinKarp(string s[1..n], string pattern[1..m])
 // primeRK is the prime base used in Rabin-Karp algorithm.
 const primeRK = 16777619
 
+// Index returns the index of the first instance of sep in s, or -1 if sep is not present in s.
 func referenceStrStr(haystack string, needle string) int {
-	if len(needle) == 0 {
+	//查找字符串的长度
+	n := len(needle)
+	switch {
+	//长度 == 0， return 0
+	case n == 0:
 		return 0
-	}
-	if len(haystack) == 0 || len(haystack) < len(needle) {
+	case n == 1:
+		for k, _ := range haystack {
+			if haystack[k] == needle[0] {
+				return k
+			}
+		}
+		return -1
+	case n == len(haystack):
+		if needle == haystack {
+			return 0
+		}
+		return -1
+	case n > len(haystack):
 		return -1
 	}
 	// Rabin-Karp search
-	hashss, pow := hashStr(needle)
-	n := len(needle)
+
+	hashsep, pow := hashStr(needle)
 	var h uint32
 	for i := 0; i < n; i++ {
 		h = h*primeRK + uint32(haystack[i])
 	}
-	if h == hashss && haystack[:n] == needle {
+	if h == hashsep && haystack[:n] == needle {
 		return 0
 	}
 	for i := n; i < len(haystack); {
@@ -69,10 +85,7 @@ func referenceStrStr(haystack string, needle string) int {
 		h += uint32(haystack[i])
 		h -= pow * uint32(haystack[i-n])
 		i++
-		// 重要的代码
-		// 如果hash函数选用不当，可能导致哈希值频繁冲突
-		// 时间复杂度退化为O(n * m)
-		if h == hashss && haystack[i-n:i] == needle {
+		if h == hashsep && haystack[i-n:i] == needle {
 			return i - n
 		}
 	}
