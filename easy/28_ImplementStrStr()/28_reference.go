@@ -40,7 +40,7 @@ function RabinKarp(string s[1..n], string pattern[1..m])
 
 
 
-结果: 执行用时 :4 ms 内存消耗 :4.6 MB
+结果: 执行用时 :0 ms 内存消耗 :2.3 MB
 */
 
 
@@ -48,6 +48,12 @@ function RabinKarp(string s[1..n], string pattern[1..m])
 const primeRK = 16777619
 
 func referenceStrStr(haystack string, needle string) int {
+	if len(needle) == 0 {
+		return 0
+	}
+	if len(haystack) == 0 || len(haystack) < len(needle) {
+		return -1
+	}
 	// Rabin-Karp search
 	hashss, pow := hashStr(needle)
 	n := len(needle)

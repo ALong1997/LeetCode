@@ -26,6 +26,9 @@ func Test_Problem28(t *testing.T) {
 	}, {
 		para28: para28{"aaaab", "bba"},
 		ans28:  ans28{-1},
+	}, {
+		para28: para28{"", "a"},
+		ans28:  ans28{-1},
 	}}
 
 	fmt.Printf("------------------------Leetcode Problem 13------------------------\n")
