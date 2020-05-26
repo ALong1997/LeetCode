@@ -31,7 +31,7 @@ func Test_Problem35(t *testing.T) {
 		ans35:  ans35{4},
 	}}
 
-	fmt.Printf("------------------------Leetcode Problem 34------------------------\n")
+	fmt.Printf("------------------------Leetcode Problem 35------------------------\n")
 
 	for _, q := range qs {
 		a, p := q.ans35, q.para35
