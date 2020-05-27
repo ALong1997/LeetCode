@@ -54,7 +54,8 @@ func combinationSum(candidates []int, target int) [][]int {
 func dfs(candidates, path []int, begin, length, target int, ans *[][]int) {
 	if target == 0 {
 		tmp := make([]int, len(path))
-		//深拷贝，保证已加入结果集不受影响,path作为参数，是一直在变化的，如果不拷贝的话，ans中的所有元素底层都是共用同一个数组(path)了
+		// 深拷贝，保证已加入结果集不受影响
+		// path作为参数，是一直在变化的，如果不拷贝的话，ans中的所有元素底层都是共用同一个数组(path)了
 		copy(tmp, path)
 		*ans = append(*ans, tmp)
 		return
