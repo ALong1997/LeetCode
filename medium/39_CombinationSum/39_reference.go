@@ -32,7 +32,7 @@ import (
 	搜索问题一般复杂度较高，能剪枝就尽量需要剪枝。把候选数组排个序，遇到一个较大的数，如果以这个数为起点都搜索不到结果，后面的数就更搜索不到结果了。
 
 
-结果: 执行用时 :0 ms 内存消耗 :2.2 MB
+结果: 执行用时 :4 ms 内存消耗 :2.7 MB
 */
 
 
@@ -72,6 +72,6 @@ func dfs(candidates, path []int, begin, length, target int, ans *[][]int) {
 		// 因为下一层不能比上一层还小，起始索引还从 i 开始
 		dfs(candidates, path, i, length, value, ans)
 		// 这一步可能造成指针污染
-		path = path[1:]
+		path = path[:len(path)-1]
 	}
 }

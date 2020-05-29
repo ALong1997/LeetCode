@@ -26,6 +26,9 @@ func Test_Problem39(t *testing.T) {
 	}, {
 		para39: para39{[]int{2, 3, 5}, 8},
 		ans39:  ans39{[][]int{{2, 2, 2, 2}, {2, 3, 3}, {3, 5}}},
+	}, {
+		para39: para39{[]int{2, 3, 5}, 7},
+		ans39:  ans39{[][]int{{2, 5}, {2, 2, 3}}},
 	}}
 
 	fmt.Printf("------------------------Leetcode Problem 39------------------------\n")
