@@ -26,9 +26,9 @@ func multiply(num1 string, num2 string) string {
 
 	// num1[i] * num[j] 值必定在resArr[i+j] resArr[i+j+1]上，i+j+1存储低位
 	resArr := make([]int, len(num1) + len(num2))
-	for i := len(num2)-1; i >= 0; i -- {
+	for i := len(num2)-1; i >= 0; i-- {
 		n2 := int(num2[i] - '0')
-		for j := len(num1)-1; j >= 0; j -- {
+		for j := len(num1)-1; j >= 0; j-- {
 			n1 := int(num1[j] - '0')
 			product := n2 * n1 + resArr[i+j+1]
 			resArr[i+j+1] = product % 10
