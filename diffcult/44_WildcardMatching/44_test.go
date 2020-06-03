@@ -41,8 +41,8 @@ func Test_Problem42(t *testing.T) {
 
 	for _, q := range qs {
 		a, p := q.ans44, q.para44
-		fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, isMatch(p.s, p.p), a)
-		//fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, reference2Trap(p.height), a)
+		//fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, isMatch(p.s, p.p), a)
+		fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, referenceIsMatch(p.s, p.p), a)
 	}
 	fmt.Printf("\n")
 }
