@@ -41,6 +41,9 @@ func Test_Problem9(t *testing.T) {
 	}, {
 		para10: para10{"aaa", "ab*a*c*a"},
 		ans10:  ans10{true},
+	}, {
+		para10: para10{"ssip", "s*p*"},
+		ans10:  ans10{false},
 	}}
 
 	fmt.Printf("------------------------Leetcode Problem 5------------------------\n")
@@ -49,7 +52,7 @@ func Test_Problem9(t *testing.T) {
 		a, p := q.ans10, q.para10
 		// fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, isMatch(p.s, p.p), a)
 		// fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, reference1IsMatch(p.s, p.p), a)
-		fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, reference2IsMatch(p.s, p.p), a)
+		fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, reference3IsMatch(p.s, p.p), a)
 	}
 	fmt.Printf("\n")
 }
