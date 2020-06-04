@@ -19,7 +19,7 @@ type ans44 struct {
 	ans bool
 }
 
-func Test_Problem42(t *testing.T) {
+func Test_Problem44(t *testing.T) {
 	qs := []question44{{
 		para44: para44{"aa", "a"},
 		ans44:  ans44{false},
