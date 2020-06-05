@@ -8,8 +8,10 @@ package leetcode
 /*
 解法: 动态规划
 dp[i]记录 任一点 到 i 的最短路径，0 表示不是最短路径
-从 i 走到 j 时, dp[j] = dp[i] + 1
-
+从 i 走到 j 时
+		dp[i] + 1,				dp[j]==0
+dp[j] =
+		min(dp[i] + 1, dp[j]),	dp[j]!=0
 
 结果: 执行用时 :428 ms 内存消耗 :4.7 MB
 */
