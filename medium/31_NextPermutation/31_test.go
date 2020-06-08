@@ -31,7 +31,7 @@ func Test_Problem31(t *testing.T) {
 
 	for _, q := range qs {
 		a, p := q.ans31, q.para31
-		fmt.Printf("【input】:%v", p)
+		fmt.Printf("【input】:%v				", p)
 		nextPermutation(p.nums)
 		fmt.Printf("【output】:%v				【answer】:%v\n", p, a)
 		//fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, referenceStrStr(p.aystack, p.needle), a)

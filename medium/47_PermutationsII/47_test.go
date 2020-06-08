@@ -28,7 +28,7 @@ func Test_Problem47(t *testing.T) {
 
 	for _, q := range qs {
 		a, p := q.ans47, q.para47
-		fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, permuteUniqu(p.nums), a)
+		fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, permuteUnique(p.nums), a)
 		//fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, referenceIsMatch(p.s, p.p), a)
 	}
 	fmt.Printf("\n")
