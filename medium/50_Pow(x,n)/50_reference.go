@@ -28,7 +28,7 @@ func referenceMyPow(x float64, n int) float64 {
 	if n >= 0 {
 		return referenceQuickMul(x, n)
 	}
-	return 1.0 / quickMul(x, -n)
+	return 1.0 / referenceQuickMul(x, -n)
 }
 
 func referenceQuickMul(x float64, N int) float64 {
