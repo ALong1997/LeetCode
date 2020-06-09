@@ -28,8 +28,8 @@ func Test_Problem49(t *testing.T) {
 
 	for _, q := range qs {
 		a, p := q.ans49, q.para49
-		fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, groupAnagrams(p.str), a)
-		//fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, referenceIsMatch(p.s, p.p), a)
+		//fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, groupAnagrams(p.str), a)
+		fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, referenceGroupAnagrams(p.str), a)
 	}
 	fmt.Printf("\n")
 }
