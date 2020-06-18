@@ -12,14 +12,14 @@ package leetcode
 */
 
 // Definition for singly-linked list.
-type ListNode struct {
+type listNode struct {
 	Val int
-	Next *ListNode
+	Next *listNode
 }
 
-func swapPairs(head *ListNode) *ListNode {
-	var ans, p, q, r *ListNode
-	r = &ListNode{
+func swapPairs(head *listNode) *listNode {
+	var ans, p, q, r *listNode
+	r = &listNode{
 		Val:  0,
 		Next: head,
 	}

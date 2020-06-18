@@ -24,12 +24,12 @@ func totalNQueens(n int) int {
 	if n == 0 {
 		return 0
 	}
-	q := NewQueen(n)
+	q := newQueen(n)
 	q.backtrack(0)
 	return q.ret
 }
 
-func NewQueen(n int) *queen {
+func newQueen(n int) *queen {
 	stack := make(map[int]int, n)
 	col := make([]int, n)
 	pie := make(map[int]int, n)

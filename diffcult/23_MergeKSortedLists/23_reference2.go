@@ -22,11 +22,11 @@ import "container/heap"
 */
 
 // Time: O(n*log(k)), Space: O(k) n是总节点数量，k是链表个数
-func reference2mergeKLists(lists []*ListNode) *ListNode {
+func reference2mergeKLists(lists []*listNode) *listNode {
 	if lists == nil || len(lists) == 0 {
 		return nil // 链表为空或长度为0，直接返回空指针
 	}
-	var h IntHeap // 最小堆用于维护当前k个节点
+	var h intHeap // 最小堆用于维护当前k个节点
 	heap.Init(&h) // 用于节点间的比较
 
 	for _, list := range lists {
@@ -36,12 +36,12 @@ func reference2mergeKLists(lists []*ListNode) *ListNode {
 		}
 	}
 	// 定义dummy节点用于统一处理
-	dummy := &ListNode{}
+	dummy := &listNode{}
 	p := dummy // p初始指向dummy节点
 
 	// 当最小堆不为空时，不断执行以下操作
 	for h.Len() > 0 { // 取出堆顶元素，即取出最小值节点
-		min := heap.Pop(&h).(*ListNode)
+		min := heap.Pop(&h).(*listNode)
 		p.Next = min // 游标p指向最小值节点
 		p = p.Next   // p向后移动一个位置
 		// 这样就确定一个节点在合并链表中的位置
@@ -52,13 +52,13 @@ func reference2mergeKLists(lists []*ListNode) *ListNode {
 	return dummy.Next // 最后只要返回dummy.Next即可
 }
 
-type IntHeap []*ListNode
+type intHeap []*listNode
 
-func (h IntHeap) Len() int            { return len(h) }
-func (h IntHeap) Less(i, j int) bool  { return h[i].Val < h[j].Val }
-func (h IntHeap) Swap(i, j int)       { h[i], h[j] = h[j], h[i] }
-func (h *IntHeap) Push(x interface{}) { *h = append(*h, x.(*ListNode)) }
-func (h *IntHeap) Pop() interface{} {
+func (h intHeap) Len() int            { return len(h) }
+func (h intHeap) Less(i, j int) bool  { return h[i].Val < h[j].Val }
+func (h intHeap) Swap(i, j int)       { h[i], h[j] = h[j], h[i] }
+func (h *intHeap) Push(x interface{}) { *h = append(*h, x.(*listNode)) }
+func (h *intHeap) Pop() interface{} {
 	old := *h
 	n := len(old)
 	x := old[n-1]

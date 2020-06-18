@@ -15,11 +15,11 @@ package leetcode
 结果: 执行用时 :4 ms 内存消耗 :5.3 MB
 */
 
-func referenceMergeKLists(lists []*ListNode) *ListNode {
+func referenceMergeKLists(lists []*listNode) *listNode {
 	return merge(lists, 0, len(lists)- 1)
 }
 
-func merge(lists []*ListNode, l, r int) *ListNode {
+func merge(lists []*listNode, l, r int) *listNode {
 	if l == r {
 		return lists[l]
 	}

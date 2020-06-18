@@ -15,21 +15,21 @@ package leetcode
 */
 
 // Definition for singly-linked list.
-type ListNode struct {
+type listNode struct {
 	Val int
-	Next *ListNode
+	Next *listNode
 }
 
-func mergeKLists(lists []*ListNode) *ListNode {
-	var ans *ListNode
+func mergeKLists(lists []*listNode) *listNode {
+	var ans *listNode
 	for i := 0; i < len(lists) ; i++ {
 		ans = mergeTwoLists(ans, lists[i])
 	}
 	return ans
 }
 
-func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
-	dummy := &ListNode{}
+func mergeTwoLists(l1 *listNode, l2 *listNode) *listNode {
+	dummy := &listNode{}
 	prev := dummy
 	for l1 != nil && l2 != nil {
 		if l1.Val < l2.Val {

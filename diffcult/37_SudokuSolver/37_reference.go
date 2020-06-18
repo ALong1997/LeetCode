@@ -32,7 +32,7 @@ package leetcode
 结果: 执行用时 :4 ms 内存消耗 :2.1 MB
 */
 
-type SudoMap struct {
+type sudoMap struct {
 	RowMap [9][9]int
 	ColMap [9][9]int
 	BoardMap [9][9]int
@@ -40,7 +40,7 @@ type SudoMap struct {
 
 func solveSudoku(board [][]byte)  {
 	// 初始化
-	smap := new(SudoMap)
+	smap := new(sudoMap)
 
 	// 将 board 构建至 smap
 	for r, rowData := range board {
@@ -56,7 +56,7 @@ func solveSudoku(board [][]byte)  {
 	backtrace(board, smap, 0, 0)
 }
 
-func backtrace(board [][]byte, smap *SudoMap, r, c int) bool {
+func backtrace(board [][]byte, smap *sudoMap, r, c int) bool {
 	if isEndPos(r, c) {
 		return true
 	}
@@ -89,19 +89,19 @@ func backtrace(board [][]byte, smap *SudoMap, r, c int) bool {
 	}
 }
 
-func canPutNumber(smap *SudoMap, v, r, c int) bool {
+func canPutNumber(smap *sudoMap, v, r, c int) bool {
 	boardPos := rc2Board(r, c)
 	return smap.RowMap[r][v - 1] == 0 && smap.ColMap[c][v - 1] == 0 && smap.BoardMap[boardPos][v - 1] == 0
 }
 
-func putNumber(smap *SudoMap, v, r, c int) {
+func putNumber(smap *sudoMap, v, r, c int) {
 	boardPos := rc2Board(r, c)
 	smap.RowMap[r][v - 1] += 1
 	smap.ColMap[c][v - 1] += 1
 	smap.BoardMap[boardPos][v - 1] += 1
 }
 
-func clearNumber(smap *SudoMap, v, r, c int) {
+func clearNumber(smap *sudoMap, v, r, c int) {
 	boardPos := rc2Board(r, c)
 	smap.RowMap[r][v - 1] = 0
 	smap.ColMap[c][v - 1] = 0

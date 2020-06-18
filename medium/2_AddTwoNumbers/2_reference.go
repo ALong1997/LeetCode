@@ -2,9 +2,9 @@ package leetcode
 
 /**
  * Definition for singly-linked list.
- * type ListNode struct {
+ * type listNode struct {
  *     Val int
- *     Next *ListNode
+ *     Next *listNode
  * }
  */
 /*
@@ -13,11 +13,11 @@ package leetcode
 
 结果: 执行用时 :8 ms 内存消耗 :4.6 MB
 */
-func referenceAddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
+func referenceAddTwoNumbers(l1 *listNode, l2 *listNode) *listNode {
 	if l1 == nil || l2 == nil {
 		return nil
 	}
-	head := &ListNode{Val: 0, Next: nil}
+	head := &listNode{Val: 0, Next: nil}
 	current := head
 	carry := 0
 	for l1 != nil || l2 != nil {
@@ -32,7 +32,7 @@ func referenceAddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 		} else {
 			y = l2.Val
 		}
-		current.Next = &ListNode{Val: (x + y + carry) % 10, Next: nil}
+		current.Next = &listNode{Val: (x + y + carry) % 10, Next: nil}
 		current = current.Next
 		carry = (x + y + carry) / 10
 		if l1 != nil {
@@ -43,7 +43,7 @@ func referenceAddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 		}
 	}
 	if carry > 0 {
-		current.Next = &ListNode{Val: carry % 10, Next: nil}
+		current.Next = &listNode{Val: carry % 10, Next: nil}
 	}
 	return head.Next
 }

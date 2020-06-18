@@ -11,27 +11,27 @@ type question25 struct {
 }
 
 type para25 struct {
-	head *ListNode
+	head *listNode
 	k int
 }
 
 type ans25 struct {
-	ans *ListNode
+	ans *listNode
 }
 
 func Test_Problem25(t *testing.T) {
 
-	l1_5 := &ListNode{5, nil}
-	l1_4 := &ListNode{4, l1_5}
-	l1_3 := &ListNode{3, l1_4}
-	l1_2 := &ListNode{2, l1_3}
-	l1_1 := &ListNode{1, l1_2}
+	l1_5 := &listNode{5, nil}
+	l1_4 := &listNode{4, l1_5}
+	l1_3 := &listNode{3, l1_4}
+	l1_2 := &listNode{2, l1_3}
+	l1_1 := &listNode{1, l1_2}
 
-	a1_5 := &ListNode{5, nil}
-	a1_4 := &ListNode{3, a1_5}
-	a1_3 := &ListNode{4, a1_4}
-	a1_2 := &ListNode{1, a1_3}
-	a1_1 := &ListNode{2, a1_2}
+	a1_5 := &listNode{5, nil}
+	a1_4 := &listNode{3, a1_5}
+	a1_3 := &listNode{4, a1_4}
+	a1_2 := &listNode{1, a1_3}
+	a1_1 := &listNode{2, a1_2}
 
 
 	qs := []question25{{
@@ -44,11 +44,11 @@ func Test_Problem25(t *testing.T) {
 	for _, q := range qs {
 		a, p := q.ans25, q.para25
 		fmt.Print("【input】:")
-		p.head.printListNode()
+		p.head.printlistNode()
 		fmt.Print("       【output】:")
-		reverseKGroup(p.head, p.k).printListNode()
+		reverseKGroup(p.head, p.k).printlistNode()
 		fmt.Print("       【answer】:")
-		a.ans.printListNode()
+		a.ans.printlistNode()
 		fmt.Printf("\n")
 		//fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, threeSum(p.nums), a)
 		//fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, referenceThreeSum(p.nums), a)
@@ -56,8 +56,8 @@ func Test_Problem25(t *testing.T) {
 	fmt.Printf("\n")
 }
 
-// 输出 ListNode ：(2 -> 4 -> 3)
-func (l *ListNode) printListNode()  {
+// 输出 listNode ：(2 -> 4 -> 3)
+func (l *listNode) printlistNode()  {
 	fmt.Print("(")
 	for ; l != nil ; l = l.Next {
 		fmt.Print(l.Val)

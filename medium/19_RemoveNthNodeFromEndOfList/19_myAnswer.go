@@ -15,13 +15,13 @@ package leetcode
 
 
 // Definition for singly-linked list.
-type ListNode struct {
+type listNode struct {
 	Val int
-	Next *ListNode
+	Next *listNode
 }
 
-func removeNthFromEnd(head *ListNode, n int) *ListNode {
-	var p, q *ListNode
+func removeNthFromEnd(head *listNode, n int) *listNode {
+	var p, q *listNode
 	var distance int
 	q = head
 	for q.Next != nil && distance < n {

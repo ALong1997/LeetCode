@@ -39,17 +39,17 @@ func referenceMaxSubArray(nums []int) int {
 	return get(nums, 0, len(nums) - 1).mSum
 }
 
-func pushUp(l, r Status) Status {
+func pushUp(l, r status) status {
 	iSum := l.iSum + r.iSum
 	lSum := max(l.lSum, l.iSum + r.lSum)
 	rSum := max(r.rSum, r.iSum + l.rSum)
 	mSum := max(max(l.mSum, r.mSum), l.rSum + r.lSum)
-	return Status{lSum, rSum, mSum, iSum}
+	return status{lSum, rSum, mSum, iSum}
 }
 
-func get(nums []int, l, r int) Status {
+func get(nums []int, l, r int) status {
 	if l == r {
-		return Status{nums[l], nums[l], nums[l], nums[l]}
+		return status{nums[l], nums[l], nums[l], nums[l]}
 	}
 	m := (l + r) >> 1
 	lSub := get(nums, l, m)
@@ -64,6 +64,6 @@ func max(x, y int) int {
 	return y
 }
 
-type Status struct {
+type status struct {
 	lSum, rSum, mSum, iSum int
 }

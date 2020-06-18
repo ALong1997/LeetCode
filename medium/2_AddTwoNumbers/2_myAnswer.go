@@ -3,16 +3,16 @@
 如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。
 您可以假设除了数字 0 之外，这两个数都不会以 0 开头。
  * Definition for singly-linked list.
- * type ListNode struct {
+ * type listNode struct {
  *     Val int
- *     Next *ListNode
+ *     Next *listNode
  * }
 */
 package leetcode
 
-type ListNode struct {
+type listNode struct {
 	Val int
-	Next *ListNode
+	Next *listNode
 }
 
 /*
@@ -21,8 +21,8 @@ type ListNode struct {
 
 结果: 执行用时 :4 ms 内存消耗 :5 MB
 */
-func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-	l3 := &ListNode{0, nil}
+func addTwoNumbers(l1 *listNode, l2 *listNode) *listNode {
+	l3 := &listNode{0, nil}
 	head := l3
 	tail := l3
 	carry, sum := 0, 0
@@ -31,7 +31,7 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 		sum = l1.Val + l2.Val + carry
 		l3.Val = sum % 10
 		carry = sum / 10
-		l3.Next = &ListNode{0, nil}
+		l3.Next = &listNode{0, nil}
 		tail = l3
 		l1 = l1.Next
 		l2 = l2.Next
@@ -60,7 +60,7 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 		l3.Val = sum % 10
 		carry = sum / 10
 		if l3.Next == nil {
-			l3.Next = &ListNode{0, nil}
+			l3.Next = &listNode{0, nil}
 		}
 		tail = l3
 	}

@@ -11,31 +11,31 @@ type question19 struct {
 }
 
 type para19 struct {
-	head *ListNode
+	head *listNode
 	n int
 }
 
 type ans19 struct {
-	ans *ListNode
+	ans *listNode
 }
 
 func Test_Problem19(t *testing.T) {
 
-	l1_5 := &ListNode{5, nil}
-	l1_4 := &ListNode{4, l1_5}
-	l1_3 := &ListNode{3, l1_4}
-	l1_2 := &ListNode{2, l1_3}
-	l1_1 := &ListNode{1, l1_2}
+	l1_5 := &listNode{5, nil}
+	l1_4 := &listNode{4, l1_5}
+	l1_3 := &listNode{3, l1_4}
+	l1_2 := &listNode{2, l1_3}
+	l1_1 := &listNode{1, l1_2}
 
-	a1_4 := &ListNode{5, nil}
-	a1_3 := &ListNode{3, a1_4}
-	a1_2 := &ListNode{2, a1_3}
-	a1_1 := &ListNode{1, a1_2}
+	a1_4 := &listNode{5, nil}
+	a1_3 := &listNode{3, a1_4}
+	a1_2 := &listNode{2, a1_3}
+	a1_1 := &listNode{1, a1_2}
 
-	l2_2 := &ListNode{2, nil}
-	l2_1 := &ListNode{1, l2_2}
+	l2_2 := &listNode{2, nil}
+	l2_1 := &listNode{1, l2_2}
 
-	a2_1 := &ListNode{1, nil}
+	a2_1 := &listNode{1, nil}
 
 	qs := []question19{{
 		para19: para19{l1_1, 2},
@@ -50,11 +50,11 @@ func Test_Problem19(t *testing.T) {
 	for _, q := range qs {
 		a, p := q.ans19, q.para19
 		fmt.Print("【input】:")
-		p.head.printListNode()
+		p.head.printlistNode()
 		fmt.Print("       【output】:")
-		removeNthFromEnd(p.head, p.n).printListNode()
+		removeNthFromEnd(p.head, p.n).printlistNode()
 		fmt.Print("       【answer】:")
-		a.ans.printListNode()
+		a.ans.printlistNode()
 		fmt.Printf("\n")
 		//fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, threeSum(p.nums), a)
 		//fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, referenceThreeSum(p.nums), a)
@@ -62,8 +62,8 @@ func Test_Problem19(t *testing.T) {
 	fmt.Printf("\n")
 }
 
-// 输出 ListNode ：(2 -> 4 -> 3)
-func (l *ListNode) printListNode()  {
+// 输出 listNode ：(2 -> 4 -> 3)
+func (l *listNode) printlistNode()  {
 	fmt.Print("(")
 	for ; l != nil ; l = l.Next {
 		fmt.Print(l.Val)

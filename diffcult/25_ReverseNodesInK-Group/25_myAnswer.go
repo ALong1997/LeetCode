@@ -17,13 +17,13 @@ package leetcode
 */
 
 // Definition for singly-linked list.
-type ListNode struct {
+type listNode struct {
 	Val int
-	Next *ListNode
+	Next *listNode
 }
 
-func reverseKGroup(head *ListNode, k int) *ListNode {
-	dummy := &ListNode{
+func reverseKGroup(head *listNode, k int) *listNode {
+	dummy := &listNode{
 		Val: -1,
 		Next: head,
 	}
