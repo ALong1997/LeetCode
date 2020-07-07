@@ -34,15 +34,15 @@ const (
 func isNumber(s string) bool {
 	s = strings.TrimRight(s, " ")
 	dfa := [][]int{
-		[]int{blank, digit1, sign1, point, err},
-		[]int{err, digit1, err, digit2, e},
-		[]int{err, digit1, err, point, err},
-		[]int{err, digit2, err, err, e},
-		[]int{err, digit2, err, err, err},
-		[]int{err, digit2, err, err, e},
-		[]int{err, digit3, sign2, err, err},
-		[]int{err, digit3, err, err, err},
-		[]int{err, digit3, err, err, err},
+		{blank, digit1, sign1, point, err},
+		{err, digit1, err, digit2, e},
+		{err, digit1, err, point, err},
+		{err, digit2, err, err, e},
+		{err, digit2, err, err, err},
+		{err, digit2, err, err, e},
+		{err, digit3, sign2, err, err},
+		{err, digit3, err, err, err},
+		{err, digit3, err, err, err},
 	}
 
 	state := 0 // blank start
