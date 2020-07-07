@@ -14,7 +14,7 @@ import (
 
 func referenceIsNumber(s string) bool {
 	s = strings.TrimSpace(s)
-	ans,_ := regexp.MatchString("^(([\\+\\-]?[0-9]+(\\.[0-9]*)?)|([\\+\\-]?\\.?[0-9]+))(e[\\+\\-]?[0-9]+)?$", s)
+	ans,_ := regexp.MatchString("^(([+\\-]?[0-9]+(\\.[0-9]*)?)|([\\+\\-]?\\.?[0-9]+))(e[\\+\\-]?[0-9]+)?$", s)
 
 	return ans
 }
