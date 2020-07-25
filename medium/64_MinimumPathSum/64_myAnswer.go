@@ -5,8 +5,6 @@
 */
 package leetcode
 
-import "log"
-
 /*
 解法:参考T62
 dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j]
@@ -40,7 +38,6 @@ func minPathSum(grid [][]int) int {
 				cur[j] = cur[j-1] + grid[i][j]
 			}
 		}
-		log.Println(cur)
 	}
 	return cur[n-1]
 }
