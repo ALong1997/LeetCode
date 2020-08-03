@@ -25,7 +25,6 @@ func findMinHeightTrees(n int, edges [][]int) []int {
 		}
 		treeHeight[i] = dfsTreeHeight(i, haveSearch, edges)
 	}
-	// fmt.Printf("%v", treeHeight)
 	return minHeight(treeHeight, n)
 }
 
