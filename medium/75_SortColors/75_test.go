@@ -15,7 +15,7 @@ type para75 struct {
 }
 
 type ans75 struct {
-	nums []int
+	ans []int
 }
 
 func Test_Problem75(t *testing.T) {
