@@ -28,8 +28,8 @@ func Test_Problem78(t *testing.T) {
 
 	for _, q := range qs {
 		a, p := q.ans78, q.para78
-		fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, subsets(p.nums), a)
-		//fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, referenceCombine(p.n, p.k), a)
+		//fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, subsets(p.nums), a)
+		fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, referenceSubsets(p.nums), a)
 	}
 	fmt.Printf("\n")
 }
