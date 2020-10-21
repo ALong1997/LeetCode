@@ -7,7 +7,7 @@ package leetcode
 解法: 双指针
 
 
-结果: 执行用时 :4 ms 内存消耗 :3 MB
+结果: 执行用时 :4 ms 内存消耗 :3.1 MB
 */
 
 // Definition for singly-linked list.
@@ -22,7 +22,7 @@ func deleteDuplicates(head *listNode) *listNode {
 	}
 
 	var count = 0
-	var left, right, behind = head, head.Next, head // behind 指向 left 的上一个节点
+	var left, right, behind = head, head.Next, head // behind 指向 right 的上一个节点
 	for ; right != nil; right = right.Next {
 		if left.Val == right.Val {
 			count++
@@ -30,24 +30,24 @@ func deleteDuplicates(head *listNode) *listNode {
 			if count > 0 {
 				if left == head {
 					// 首部处理
-					head = right
+					head = behind
 				} else {
-					behind.Next = right
+					left.Next = right
 				}
 				left = right
 				count = 0
 			} else {
-				behind = left
 				left = left.Next
 			}
 		}
+		behind = right
 	}
 	if count > 0 {
 		// 尾部处理
 		if left == head {
-			head = right
+			head = behind
 		} else {
-			behind.Next = right
+			left.Next = nil
 		}
 	}
 
