@@ -14,25 +14,6 @@ import "math"
 结果: 执行用时 :612 ms 内存消耗 :4.2 MB
 */
 
-/*
- int largestRectangleArea(vector<int>& heights) {
-        int n = heights.size();
-        int ans = 0;
-        // 枚举左边界
-        for (int left = 0; left < n; ++left) {
-            int minHeight = INT_MAX;
-            // 枚举右边界
-            for (int right = left; right < n; ++right) {
-                // 确定高度
-                minHeight = min(minHeight, heights[right]);
-                // 计算面积
-                ans = max(ans, (right - left + 1) * minHeight);
-            }
-        }
-        return ans;
-    }
-*/
-
 // 枚举「宽」
 func largestRectangleAreaWidth(heights []int) int {
 	var maxArea int

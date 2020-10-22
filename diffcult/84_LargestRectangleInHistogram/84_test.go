@@ -28,8 +28,9 @@ func Test_Problem84(t *testing.T) {
 
 	for _, q := range qs {
 		a, p := q.ans84, q.para84
-		fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, largestRectangleArea(p.heights), a)
-		//fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, referenceIsNumber(p.s), a)
+		//fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, largestRectangleAreaWidth(p.heights), a)
+		//fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, largestRectangleAreaHeight(p.heights), a)
+		fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, referenceLargestRectangleArea(p.heights), a)
 	}
 	fmt.Printf("\n")
 }
