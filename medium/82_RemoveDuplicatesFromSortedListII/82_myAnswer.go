@@ -4,7 +4,7 @@
 package leetcode
 
 /*
-解法: 双指针
+解法: 三指针
 
 
 结果: 执行用时 :4 ms 内存消耗 :3 MB
