@@ -1,8 +1,8 @@
+package leetcode
 /*
 给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。
 你能尝试使用一趟扫描实现吗？
 */
-package leetcode
 
 /*
 解法: 我们可以使用两个指针而不是一个指针。
@@ -13,10 +13,9 @@ package leetcode
 结果: 执行用时 :0 ms 内存消耗 :2.2 MB
 */
 
-
 // Definition for singly-linked list.
 type listNode struct {
-	Val int
+	Val  int
 	Next *listNode
 }
 
@@ -28,10 +27,10 @@ func removeNthFromEnd(head *listNode, n int) *listNode {
 		q = q.Next
 		distance++
 	}
-	if distance < n - 1 {
+	if distance < n-1 {
 		return nil
 	}
-	if distance == n - 1 {
+	if distance == n-1 {
 		return head.Next
 	}
 

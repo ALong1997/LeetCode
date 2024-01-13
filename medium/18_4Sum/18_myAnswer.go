@@ -1,8 +1,8 @@
+package leetcode
 /*
 给定一个包含 n 个整数的数组 nums 和一个目标值 target，判断 nums 中是否存在四个元素 a，b，c 和 d ，使得 a + b + c + d 的值与 target 相等？
 找出所有满足条件且不重复的四元组。
 */
-package leetcode
 
 import (
 	"sort"
@@ -26,21 +26,21 @@ func fourSum(nums []int, target int) [][]int {
 			return ans
 		}
 		var left, temp, right int
-		for i := 0; i < size - 3; i++ {
+		for i := 0; i < size-3; i++ {
 			if i > 0 && nums[i] == nums[i-1] {
 				continue
 			}
-			if target < nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3] {
+			if target < nums[i]+nums[i+1]+nums[i+2]+nums[i+3] {
 				break
 			}
-			for j := i + 1; j < size - 2; j++ {
-				if j > i + 1 && nums[j] == nums[j - 1] {
+			for j := i + 1; j < size-2; j++ {
+				if j > i+1 && nums[j] == nums[j-1] {
 					continue
 				}
-				if target < nums[i] + nums[j] + nums[j + 1] + nums[j + 2] {
+				if target < nums[i]+nums[j]+nums[j+1]+nums[j+2] {
 					break
 				}
-				if target > nums[i] + nums[j] + nums[size - 1] + nums[size - 2] {
+				if target > nums[i]+nums[j]+nums[size-1]+nums[size-2] {
 					continue
 				}
 				left = j + 1

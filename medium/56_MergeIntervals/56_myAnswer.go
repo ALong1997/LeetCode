@@ -1,17 +1,17 @@
+package leetcode
 /*
 给出一个区间的集合，请合并所有重叠的区间。
 */
-package leetcode
 
 import (
 	"sort"
 )
 
 /*
-解法: 排序 暴力解
+   解法: 排序 暴力解
 
 
-结果: 执行用时 :12 ms 内存消耗 :4.7 MB
+   结果: 执行用时 :12 ms 内存消耗 :4.7 MB
 */
 
 func merge(intervals [][]int) [][]int {

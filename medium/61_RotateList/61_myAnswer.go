@@ -1,8 +1,7 @@
+package leetcode
 /*
 给定一个链表，旋转链表，将链表每个节点向右移动 k 个位置，其中 k 是非负数。
 */
-package leetcode
-
 
 /*
 解法: 将第 k 个位置后的节点放到头部即可
@@ -11,10 +10,9 @@ package leetcode
 结果: 执行用时 :4 ms 内存消耗 :2.5 MB
 */
 
-
 // Definition for singly-linked list.
 type listNode struct {
-	Val int
+	Val  int
 	Next *listNode
 }
 

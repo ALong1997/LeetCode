@@ -1,9 +1,9 @@
+package leetcode
 /*
 给定一个非负整数数组，你最初位于数组的第一个位置。
 数组中的每个元素代表你在该位置可以跳跃的最大长度。
 你的目标是使用最少的跳跃次数到达数组的最后一个位置。
 */
-package leetcode
 
 /*
 解法: 动态规划
@@ -15,7 +15,6 @@ dp[j] =
 
 结果: 执行用时 :428 ms 内存消耗 :4.7 MB
 */
-
 
 func jump(nums []int) int {
 	var step int

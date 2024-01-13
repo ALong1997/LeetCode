@@ -1,3 +1,4 @@
+package leetcode
 /*
 给你 n 个非负整数 a1，a2，...，an，每个数代表坐标中的一个点 (i, ai) 。
 在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。
@@ -5,7 +6,6 @@
 
 说明：你不能倾斜容器，且 n 的值至少为 2。
 */
-package leetcode
 
 /*
 解法: 动态规划，双指针
@@ -18,11 +18,10 @@ package leetcode
 如果我们移动数字较大的那个指针，那么前者「两个指针指向的数字中较小值」不会增加，后者「指针之间的距离」会减小，那么这个乘积会减小。
 因此，我们移动数字较大的那个指针是不合理的。因此，我们移动 数字较小的那个指针。
 
-
 结果: 执行用时 :16 ms 内存消耗 :5.8 MB
 */
 func maxArea(height []int) int {
-	left, right := 0, len(height) - 1
+	left, right := 0, len(height)-1
 	areaMax := 0
 	for left < right {
 		min := height[left]

@@ -1,9 +1,9 @@
+package leetcode
 /*
 给定一个包括 n 个整数的数组 nums 和 一个目标值 target。
 找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。
 假定每组输入只存在唯一答案。
 */
-package leetcode
 
 import (
 	"math"
@@ -12,7 +12,6 @@ import (
 
 /*
 解法: 和T15类似的思路，排序 + 双指针
-
 
 结果: 执行用时 :4 ms 内存消耗 :2.7 MB
 */
@@ -28,7 +27,7 @@ func threeSumClosest(nums []int, target int) int {
 			right = len(nums) - 1
 			for left < right {
 				temp = nums[left] + nums[i] + nums[right]
-				if math.Abs(float64(temp - target)) < math.Abs(float64(ans - target)) {
+				if math.Abs(float64(temp-target)) < math.Abs(float64(ans-target)) {
 					ans = temp
 					for left < right && nums[left] == nums[left+1] {
 						left++

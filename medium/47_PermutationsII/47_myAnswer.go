@@ -1,7 +1,7 @@
+package leetcode
 /*
 给定一个 可包含重复数字 的序列，返回所有不重复的全排列。
 */
-package leetcode
 
 /*
 解法: 回溯+剪枝 参考T46
@@ -11,7 +11,6 @@ package leetcode
 
 结果: 执行用时 :0 ms 内存消耗 :3.5 MB
 */
-
 
 func permuteUnique(nums []int) [][]int {
 	var ans [][]int
@@ -33,7 +32,7 @@ func permuteUnique(nums []int) [][]int {
 				// 动态维护数组
 				nums[first], nums[i] = nums[i], nums[first]
 				// 继续递归填下一个数
-				backtrack(first+1)
+				backtrack(first + 1)
 				// 撤销操作
 				nums[first], nums[i] = nums[i], nums[first]
 			}

@@ -1,8 +1,8 @@
+package leetcode
 /*
 判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
 你能不将整数转为字符串来解决这个问题吗？
 */
-package leetcode
 
 /*
 解法: 暴力解
@@ -12,12 +12,12 @@ package leetcode
 结果: 执行用时 :24 ms 内存消耗 :5.2 MB
 */
 func isPalindrome(x int) bool {
-	if x < 0 || (x % 10 == 0 && x != 0) {
+	if x < 0 || (x%10 == 0 && x != 0) {
 		return false
 	}
 	reverseX := 0
 	for x > reverseX {
-		reverseX = reverseX * 10 + x % 10
+		reverseX = reverseX*10 + x%10
 		x /= 10
 	}
 	// 当数字长度为奇数时，我们可以通过 reverseX/10 去除处于中位的数字。

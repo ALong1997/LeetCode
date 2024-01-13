@@ -1,3 +1,4 @@
+package leetcode
 /*
 给定一个单词数组和一个长度 maxWidth，重新排版单词，使其成为每行恰好有 maxWidth 个字符，且左右两端对齐的文本。
 你应该使用“贪心算法”来放置给定的单词；也就是说，尽可能多地往每行中放置单词。必要时可用空格 ' ' 填充，使得每行恰好有 maxWidth 个字符。
@@ -8,7 +9,6 @@
 单词是指由非空格字符组成的字符序列。
 每个单词的长度大于 0，小于等于 maxWidth。
 输入单词数组 words 至少包含一个单词。*/
-package leetcode
 
 /*
 解法: 暴力解
@@ -23,17 +23,16 @@ func fullJustify(words []string, maxWidth int) []string {
 	for i := 0; i < len(words); {
 		var s string
 		var length, count = len(words[i]), 1
-		for j := i+1; j < len(words); j++ {
-			if length + len(words[j]) + count > maxWidth {
+		for j := i + 1; j < len(words); j++ {
+			if length+len(words[j])+count > maxWidth {
 				break
 			}
 			length += len(words[j])
 			count++
 		}
 
-
-		if i + count < len(words) {
-			var blank = trim(maxWidth - length, count)
+		if i+count < len(words) {
+			var blank = trim(maxWidth-length, count)
 			for k := 0; k < count; k++ {
 				s += words[i+k]
 				if k == 0 || k != count-1 {
@@ -71,9 +70,9 @@ func trim(trimLength, count int) []int {
 	}
 
 	var blank = make([]int, count-1)
-	var a, b, i = trimLength / (count-1), trimLength % (count-1), 0
+	var a, b, i = trimLength / (count - 1), trimLength % (count - 1), 0
 	for ; i < b; i++ {
-		blank[i] = a+1
+		blank[i] = a + 1
 	}
 	for ; i < count-1; i++ {
 		blank[i] = a

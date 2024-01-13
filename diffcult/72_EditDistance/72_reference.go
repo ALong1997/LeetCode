@@ -6,7 +6,6 @@
 删除一个字符
 替换一个字符
 */
-package leetcode
 
 /*
 解法: 动态规划
@@ -60,15 +59,15 @@ func minDistance(word1 string, word2 string) int {
 	var dp = make([][]int, len(word1)+1)
 	s1 := len(word1)
 	s2 := len(word2)
-	for i:=0; i<s1+1; i++ { // 预留空间+1，因为需要0存放空字符情况，初始化dp table第一列 存放word1，dp[i][0]代表删除字符个数 （以改变word1为维度）
+	for i := 0; i < s1+1; i++ { // 预留空间+1，因为需要0存放空字符情况，初始化dp table第一列 存放word1，dp[i][0]代表删除字符个数 （以改变word1为维度）
 		dp[i] = make([]int, s2+1)
 		dp[i][0] = i
 	}
-	for j:=0; j<s2+1; j++ { // 预留空间+1，因为需要0存放空字符情况，初始化dp table第一行 存放word2，dp[0][j]代表新增字符的个数 （以改变word1为维度）
+	for j := 0; j < s2+1; j++ { // 预留空间+1，因为需要0存放空字符情况，初始化dp table第一行 存放word2，dp[0][j]代表新增字符的个数 （以改变word1为维度）
 		dp[0][j] = j
 	}
-	for i:=1; i<s1+1; i++ {
-		for j:=1; j<s2+1; j++ {
+	for i := 1; i < s1+1; i++ {
+		for j := 1; j < s2+1; j++ {
 			// 如果相同则跳过，获取上一个
 			if word1[i-1] == word2[j-1] {
 				dp[i][j] = dp[i-1][j-1]
@@ -82,6 +81,8 @@ func minDistance(word1 string, word2 string) int {
 }
 
 func min(a, b int) int {
-	if a > b { return b }
+	if a > b {
+		return b
+	}
 	return a
 }

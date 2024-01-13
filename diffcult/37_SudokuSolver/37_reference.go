@@ -11,7 +11,6 @@
 你可以假设给定的数独只有唯一解。
 给定数独永远是 9x9 形式的。
 */
-package leetcode
 
 /*
 解法: 约束编程 + 回溯
@@ -33,12 +32,12 @@ package leetcode
 */
 
 type sudoMap struct {
-	RowMap [9][9]int
-	ColMap [9][9]int
+	RowMap   [9][9]int
+	ColMap   [9][9]int
 	BoardMap [9][9]int
 }
 
-func solveSudoku(board [][]byte)  {
+func solveSudoku(board [][]byte) {
 	// 初始化
 	smap := new(sudoMap)
 
@@ -79,33 +78,33 @@ func backtrace(board [][]byte, smap *sudoMap, r, c int) bool {
 				// 清除元素
 				clearNumber(smap, i, r, c)
 				board[r][c] = '.'
-			}else {
+			} else {
 				return true
 			}
 		}
 		return false
-	}else {
+	} else {
 		return backtrace(board, smap, nr, nc)
 	}
 }
 
 func canPutNumber(smap *sudoMap, v, r, c int) bool {
 	boardPos := rc2Board(r, c)
-	return smap.RowMap[r][v - 1] == 0 && smap.ColMap[c][v - 1] == 0 && smap.BoardMap[boardPos][v - 1] == 0
+	return smap.RowMap[r][v-1] == 0 && smap.ColMap[c][v-1] == 0 && smap.BoardMap[boardPos][v-1] == 0
 }
 
 func putNumber(smap *sudoMap, v, r, c int) {
 	boardPos := rc2Board(r, c)
-	smap.RowMap[r][v - 1] += 1
-	smap.ColMap[c][v - 1] += 1
-	smap.BoardMap[boardPos][v - 1] += 1
+	smap.RowMap[r][v-1] += 1
+	smap.ColMap[c][v-1] += 1
+	smap.BoardMap[boardPos][v-1] += 1
 }
 
 func clearNumber(smap *sudoMap, v, r, c int) {
 	boardPos := rc2Board(r, c)
-	smap.RowMap[r][v - 1] = 0
-	smap.ColMap[c][v - 1] = 0
-	smap.BoardMap[boardPos][v - 1] = 0
+	smap.RowMap[r][v-1] = 0
+	smap.ColMap[c][v-1] = 0
+	smap.BoardMap[boardPos][v-1] = 0
 }
 
 func nextPos(r, c int) (int, int) {
@@ -128,5 +127,5 @@ func cell2Int(b byte) int {
 }
 
 func rc2Board(r, c int) int {
-	return (r / 3) * 3 + c / 3
+	return (r/3)*3 + c/3
 }

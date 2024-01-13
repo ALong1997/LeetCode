@@ -1,3 +1,4 @@
+package leetcode
 /*
 n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。
 
@@ -6,7 +7,6 @@ n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并
 
 提示：皇后，是国际象棋中的棋子，意味着国王的妻子。皇后只做一件事，那就是“吃子”。当她遇见可以吃的棋子时，就迅速冲上去吃掉棋子。当然，她横、竖、斜都可走一到七步，可进可退。
 */
-package leetcode
 
 /*
 解法: 约束编程 + 回溯
@@ -28,14 +28,13 @@ package leetcode
 结果: 执行用时 :8 ms 内存消耗 :3.3 MB
 */
 
-
 type queen struct {
-	n int				// N
-	stack map[int]int	// 某行皇后的纵坐标
-	col []int			// 列是否被攻击
-	pie map[int]int		// 副对角线是否被攻击
-	na map[int]int		// 主对角线是否被攻击
-	ret [][]string		// 答案
+	n     int         // N
+	stack map[int]int // 某行皇后的纵坐标
+	col   []int       // 列是否被攻击
+	pie   map[int]int // 副对角线是否被攻击
+	na    map[int]int // 主对角线是否被攻击
+	ret   [][]string  // 答案
 }
 
 func solveNQueens(n int) [][]string {
@@ -52,17 +51,17 @@ func newQueen(n int) *queen {
 	col := make([]int, n)
 	pie := make(map[int]int, n)
 	na := make(map[int]int, n)
-	return &queen{ n, stack, col ,pie, na, [][]string{}}
+	return &queen{n, stack, col, pie, na, [][]string{}}
 }
 
 func (q *queen) backtrack(row int) {
 	if q.n < 1 {
 		return
 	}
-	for col :=0; col < q.n; col++ {
+	for col := 0; col < q.n; col++ {
 		if q.isNotUnderAttack(row, col) {
 			q.addPos(row, col)
-			if row + 1 == q.n {
+			if row+1 == q.n {
 				q.addSolution()
 			} else {
 				q.backtrack(row + 1)
@@ -74,21 +73,21 @@ func (q *queen) backtrack(row int) {
 
 // 是否不在皇后攻击范围内
 func (q *queen) isNotUnderAttack(row, col int) bool {
-	return q.col[col] + q.pie[row + col] + q.na[col - row + 2 * q.n ] == 0
+	return q.col[col]+q.pie[row+col]+q.na[col-row+2*q.n] == 0
 }
 
 func (q *queen) addPos(row, col int) {
 	q.stack[row] = col
 	q.col[col] = 1
-	q.pie[row + col] = 1
-	q.na[col - row + 2 * q.n] = 1
+	q.pie[row+col] = 1
+	q.na[col-row+2*q.n] = 1
 }
 
 func (q *queen) rmPos(row, col int) {
 	delete(q.stack, row)
 	q.col[col] = 0
-	q.pie[row + col] = 0
-	q.na[col - row + 2 * q.n] = 0
+	q.pie[row+col] = 0
+	q.na[col-row+2*q.n] = 0
 }
 
 func (q *queen) addSolution() {

@@ -1,3 +1,4 @@
+package leetcode
 /*
 「外观数列」是一个整数序列，从数字 1 开始，序列中的每一项都是对前一项的描述。前五项如下：
 1.     1
@@ -13,7 +14,6 @@
 
 注意：整数序列中的每一项将表示为一个字符串。
 */
-package leetcode
 
 import (
 	"bytes"
@@ -21,34 +21,33 @@ import (
 )
 
 /*
-解法: 递归
+   解法: 递归
 
 
-结果: 执行用时 :0 ms 内存消耗 :2.2 MB
+   结果: 执行用时 :0 ms 内存消耗 :2.2 MB
 */
 
-
 func countAndSay(n int) string {
-	if n==1{
+	if n == 1 {
 		return "1"
-	}else{
-		last := countAndSay(n-1)
+	} else {
+		last := countAndSay(n - 1)
 		first := last[0]
 		num := 1
 		var buffer bytes.Buffer
-		for i:=1;i<len(last);i++{
-			if last[i] == first{
-				//相等,计数就可以
+		for i := 1; i < len(last); i++ {
+			if last[i] == first {
+				// 相等,计数就可以
 				num++
-			}else{
-				//不相等,将上个记录的值和数写入buffer,更新新的值和数
+			} else {
+				// 不相等,将上个记录的值和数写入buffer,更新新的值和数
 				buffer.WriteString(strconv.Itoa(num))
 				buffer.WriteString(string(first))
 				first = last[i]
 				num = 1
 			}
 		}
-		//将最后记录写入
+		// 将最后记录写入
 		buffer.WriteString(strconv.Itoa(num))
 		buffer.WriteString(string(first))
 		return buffer.String()

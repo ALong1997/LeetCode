@@ -1,3 +1,4 @@
+package leetcode
 /*
 给定一个字符串 (s) 和一个字符模式 (p) ，实现一个支持 '?' 和 '*' 的通配符匹配。
 '?' 可以匹配任何单个字符。
@@ -8,7 +9,6 @@
 s 可能为空，且只包含从 a-z 的小写字母。
 p 可能为空，且只包含从 a-z 的小写字母，以及字符 ? 和 *。
 */
-package leetcode
 
 /*
 解法: 参考T10
@@ -16,7 +16,6 @@ package leetcode
 
 结果: 执行用时 :12 ms 内存消耗 :6.1 MB
 */
-
 
 func isMatch(s string, p string) bool {
 	var sLength, pLength = len(s), len(p)
@@ -28,9 +27,9 @@ func isMatch(s string, p string) bool {
 		return false
 	}
 
-	var dp = make([][]bool, pLength + 1)
-	for i := 0; i < pLength + 1 ; i++ {
-		dp[i] = make([]bool, sLength + 1)
+	var dp = make([][]bool, pLength+1)
+	for i := 0; i < pLength+1; i++ {
+		dp[i] = make([]bool, sLength+1)
 	}
 	dp[0][0] = true
 
@@ -48,7 +47,7 @@ func isMatch(s string, p string) bool {
 			// If (string) matches (pattern),
 			// when (string) matches (pattern)* as well
 			dp[pIndex][sIndex-1] = dp[pIndex-1][sIndex-1]
-			// If (string) matches (pattern), 
+			// If (string) matches (pattern),
 			// when (string)(whatever_characters) matches (pattern)* as well
 			for sIndex < sLength+1 {
 				dp[pIndex][sIndex] = true

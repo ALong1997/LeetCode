@@ -1,3 +1,4 @@
+package leetcode
 /*
 给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。
 如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。
@@ -8,16 +9,14 @@
  *     Next *listNode
  * }
 */
-package leetcode
 
 type listNode struct {
-	Val int
+	Val  int
 	Next *listNode
 }
 
 /*
 解法: 链表相当于把一个数的各位逆序处理，所以可以正序遍历并对应相加，当l1或l2其中一条链表遍历完，直接让l3.Next指向未结束的链表，注意进位。
-
 
 结果: 执行用时 :4 ms 内存消耗 :5 MB
 */
@@ -27,7 +26,7 @@ func addTwoNumbers(l1 *listNode, l2 *listNode) *listNode {
 	tail := l3
 	carry, sum := 0, 0
 	// l1 和 l2 非空
-	for ; l1 != nil && l2 != nil; {
+	for l1 != nil && l2 != nil {
 		sum = l1.Val + l2.Val + carry
 		l3.Val = sum % 10
 		carry = sum / 10
@@ -38,7 +37,7 @@ func addTwoNumbers(l1 *listNode, l2 *listNode) *listNode {
 		l3 = l3.Next
 	}
 	// l1 比 l2 长，l2 已遍历完
-	if l1 != nil  {
+	if l1 != nil {
 		tail.Next = l1
 		l3 = l1
 	}

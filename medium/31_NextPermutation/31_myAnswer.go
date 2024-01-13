@@ -1,3 +1,4 @@
+package leetcode
 /*
 实现获取下一个排列的函数，算法需要将给定数字序列重新排列成字典序中下一个更大的排列。
 如果不存在下一个更大的排列，则将数字重新排列成最小的排列（即升序排列）。
@@ -7,7 +8,6 @@
 比如当前 nums = [1,2,3]。这个数是123，找出1，2，3这3个数字排序可能的所有数，排序后，比123大的那个数 也就是132
 如果当前 nums = [3,2,1]。这就是1，2，3所有排序中最大的那个数，那么就返回1，2，3排序后所有数中最小的那个，也就是1，2，3 -> [1,2,3]
 */
-package leetcode
 
 /*
 解法:
@@ -27,8 +27,7 @@ package leetcode
 结果: 执行用时 :0 ms 内存消耗 :2.5 MB
 */
 
-
-func nextPermutation(nums []int)  {
+func nextPermutation(nums []int) {
 	var i = len(nums) - 2
 	for i >= 0 && nums[i+1] <= nums[i] {
 		i--
@@ -45,8 +44,8 @@ func nextPermutation(nums []int)  {
 	}
 }
 
-func reverse(nums []int, start int)  {
-	var i, j = start, len(nums)-1
+func reverse(nums []int, start int) {
+	var i, j = start, len(nums) - 1
 	for i < j {
 		nums[i], nums[j] = nums[j], nums[i]
 		i++

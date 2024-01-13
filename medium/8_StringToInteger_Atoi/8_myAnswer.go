@@ -1,3 +1,4 @@
+package leetcode
 /*
 请你来实现一个 atoi 函数，使其能将字符串转换成整数。
 首先，该函数会根据需要丢弃无用的开头空格字符，直到寻找到第一个非空格的字符为止。接下来的转化规则如下：
@@ -10,13 +11,11 @@
 本题中的空白字符只包括空格字符 ' ' 。
 假设我们的环境只能存储 32 位大小的有符号整数，那么其数值范围为 [−2^31,  2^31 − 1]。如果数值超过这个范围，请返回  INT_MAX (2^31 − 1) 或 INT_MIN (−23^1) 。
 */
-package leetcode
 
 import "math"
 
 /*
 解法: 暴力解
-
 
 结果: 执行用时 :0 ms 内存消耗 :2.3 MB
 */
@@ -29,7 +28,7 @@ func myAtoi(str string) int {
 	num := 0
 	i := 0
 	// 开头的空格
-	for i = 0 ; i < length; i++ {
+	for i = 0; i < length; i++ {
 		if str[i] != ' ' {
 			break
 		}
@@ -52,7 +51,7 @@ func myAtoi(str string) int {
 	for _, ch := range []byte(str) {
 		ch -= '0'
 		if ch <= 9 {
-			num = num * 10 + int(ch)
+			num = num*10 + int(ch)
 			if num > math.MaxInt32 {
 				if isMinus {
 					return math.MinInt32

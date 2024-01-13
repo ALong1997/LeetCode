@@ -1,7 +1,7 @@
+package leetcode
 /*
 给定两个整数 n 和 k，返回 1 ... n 中所有可能的 k 个数的组合。
 */
-package leetcode
 
 /*
 解法: 回溯

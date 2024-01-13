@@ -1,8 +1,8 @@
+package leetcode
 /*
 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有满足条件且不重复的三元组。
 注意：答案中不可以包含重复的三元组。
 */
-package leetcode
 
 import (
 	"sort"
@@ -15,7 +15,6 @@ a + b + c = 0 <=> c = -(a + b) 即判断 -(a + b) 是否存在数组中
 由于数组已有序, 再对数组进行遍历查找即可。
 查找出符合条件的结果，去重即可。
 
-
 结果: 执行用时 :2628 ms 内存消耗 :6.9 MB
 */
 func threeSum(nums []int) [][]int {
@@ -24,7 +23,7 @@ func threeSum(nums []int) [][]int {
 	if len(nums) > 2 {
 		// 排序
 		sort.Ints(nums)
-		if nums[0] > 0 || nums[len(nums) - 1] < 0 {
+		if nums[0] > 0 || nums[len(nums)-1] < 0 {
 			return ans
 		}
 		for i := 0; i < len(nums); i++ {
