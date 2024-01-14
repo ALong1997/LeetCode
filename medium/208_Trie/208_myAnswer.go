@@ -68,7 +68,7 @@ func (t *Trie) Search(word string) bool {
 // Delete the word from Trie
 func (t *Trie) Delete(word string) bool {
 	if !t.Search(word) {
-		return true
+		return false
 	}
 
 	current := t.root
