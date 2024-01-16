@@ -43,16 +43,16 @@ func (t *Trie) Insert(word string) {
 		return
 	}
 
-	current := t.root
+	move := t.root
 	for _, letter := range word {
-		current.passCount++
+		move.passCount++
 		childIndex := letter - letterStart
-		if current.children[childIndex] == nil {
-			current.children[childIndex] = &node{}
+		if move.children[childIndex] == nil {
+			move.children[childIndex] = &node{}
 		}
-		current = current.children[childIndex]
+		move = move.children[childIndex]
 	}
-	current.hasEnd = true
+	move.hasEnd = true
 }
 
 // Search return whether the word exists in Trie
@@ -71,16 +71,16 @@ func (t *Trie) Delete(word string) bool {
 		return false
 	}
 
-	current := t.root
+	move := t.root
 	for _, letter := range word {
-		current.passCount--
+		move.passCount--
 		childIndex := letter - letterStart
-		current = current.children[childIndex]
+		move = move.children[childIndex]
 	}
-	if current.passCount == 0 {
-		current = nil
+	if move.passCount == 0 {
+		move = nil
 	} else {
-		current.hasEnd = false
+		move.hasEnd = false
 	}
 
 	return true
@@ -114,14 +114,14 @@ func (t *Trie) search(word string) *node {
 		return nil
 	}
 
-	current := t.root
+	move := t.root
 	for _, letter := range word {
 		childIndex := letter - letterStart
-		if current.children[childIndex] == nil {
+		if move.children[childIndex] == nil {
 			return nil
 		}
-		current = current.children[childIndex]
+		move = move.children[childIndex]
 	}
 
-	return current
+	return move
 }
