@@ -11,45 +11,45 @@ type question2 struct {
 }
 
 type para2 struct {
-	l1 *listNode
-	l2 *listNode
+	l1 *ListNode
+	l2 *ListNode
 }
 
 type ans2 struct {
-	ans *listNode
+	ans *ListNode
 }
 
 func Test_Problem2(t *testing.T) {
-	l1_3 := &listNode{3, nil}
-	l1_2 := &listNode{4, l1_3}
-	l1_1 := &listNode{2, l1_2}
+	l1_3 := &ListNode{3, nil}
+	l1_2 := &ListNode{4, l1_3}
+	l1_1 := &ListNode{2, l1_2}
 
-	l2_3 := &listNode{4, nil}
-	l2_2 := &listNode{6, l2_3}
-	l2_1 := &listNode{5, l2_2}
+	l2_3 := &ListNode{4, nil}
+	l2_2 := &ListNode{6, l2_3}
+	l2_1 := &ListNode{5, l2_2}
 
-	a12_3 := &listNode{8, nil}
-	a12_2 := &listNode{0, a12_3}
-	a12_1 := &listNode{7, a12_2}
+	a12_3 := &ListNode{8, nil}
+	a12_2 := &ListNode{0, a12_3}
+	a12_1 := &ListNode{7, a12_2}
 
-	l3_1 := &listNode{5, nil}
+	l3_1 := &ListNode{5, nil}
 
-	l4_1 := &listNode{5, nil}
+	l4_1 := &ListNode{5, nil}
 
-	a34_2 := &listNode{1, nil}
-	a34_1 := &listNode{0, a34_2}
+	a34_2 := &ListNode{1, nil}
+	a34_1 := &ListNode{0, a34_2}
 
-	l5_4 := &listNode{1, nil}
-	l5_3 := &listNode{0, l5_4}
-	l5_2 := &listNode{8, l5_3}
-	l5_1 := &listNode{8, l5_2}
+	l5_4 := &ListNode{1, nil}
+	l5_3 := &ListNode{0, l5_4}
+	l5_2 := &ListNode{8, l5_3}
+	l5_1 := &ListNode{8, l5_2}
 
-	l6_1 := &listNode{2, nil}
+	l6_1 := &ListNode{2, nil}
 
-	a56_4 := &listNode{1, nil}
-	a56_3 := &listNode{0, a56_4}
-	a56_2 := &listNode{9, a56_3}
-	a56_1 := &listNode{0, a56_2}
+	a56_4 := &ListNode{1, nil}
+	a56_3 := &ListNode{0, a56_4}
+	a56_2 := &ListNode{9, a56_3}
+	a56_1 := &ListNode{0, a56_2}
 
 	qs := []question2{{
 		para2: para2{l1_1, l2_1},
@@ -80,8 +80,8 @@ func Test_Problem2(t *testing.T) {
 	fmt.Printf("\n")
 }
 
-// 输出 listNode ：(2 -> 4 -> 3)
-func (l *listNode) printlistNode() {
+// 输出 ListNode ：(2 -> 4 -> 3)
+func (l *ListNode) printlistNode() {
 	fmt.Print("(")
 	for ; l != nil; l = l.Next {
 		fmt.Print(l.Val)

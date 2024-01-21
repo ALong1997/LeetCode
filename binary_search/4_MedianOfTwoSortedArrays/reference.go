@@ -1,8 +1,8 @@
 package LeetCode
 
-func referenceFindMedianSortedArrays(nums1 []int, nums2 []int) float64 {
+func FindMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	if len(nums1) > len(nums2) {
-		return referenceFindMedianSortedArrays(nums2, nums1)
+		return FindMedianSortedArrays(nums2, nums1)
 	}
 	low, high, k, nums1Mid, nums2Mid := 0, len(nums1), (len(nums1)+len(nums2)+1)>>1, 0, 0
 	for low <= high {
