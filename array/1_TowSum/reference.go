@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 /*
 解法: 创建HashMap，遍历数组的元素，如果target-nums[i]存在于map中，则返回i和map中对应的下标；否则把该元素存到map中。

@@ -1,16 +1,18 @@
-package leetcode
+package LeetCode
 
 /*
 解法: 动态规划
 对于母串 s , 用 c[i,j] = 1 表示字串 s[i:j] 为回文串，则有递推公式
-          c[i+1,j-1], if s[i] == s[j]
+
+	c[i+1,j-1], if s[i] == s[j]
+
 c[i,j] =
-          0         , if s[i] != s[j]
+
+	0         , if s[i] != s[j]
 
 特别地，对于这样的字符串——只包含单个字符、或者两个字符重复，其均为回文串：
 c[i,i] = 1
 c[i,i+1] = 1, if s[i] == s[i+1]
-
 
 结果: 执行用时 :44 ms 内存消耗 :6.5 MB
 */
@@ -24,20 +26,19 @@ func referenceLongestPalindrome(s string) string {
 	for i := range c {
 		c[i] = make([]bool, length)
 	}
-	for gap := 0; gap < length ; gap++ {
-		for i, j := 0, 0; i < length - gap; i++ {
+	for gap := 0; gap < length; gap++ {
+		for i, j := 0, 0; i < length-gap; i++ {
 			j = i + gap
-			if s[i] == s[j] && (j - i <= 2 || c[i+1][j-1]) {
+			if s[i] == s[j] && (j-i <= 2 || c[i+1][j-1]) {
 				c[i][j] = true
-				if j - i + 1 > len(longest) {
-					longest = s[i:j + 1]
+				if j-i+1 > len(longest) {
+					longest = s[i : j+1]
 				}
 			}
 		}
 	}
 	return longest
 }
-
 
 /*
 解法: 分治法
@@ -55,7 +56,7 @@ func reference2LongestPalindrome(s string) string {
 	}
 	length := len(s)
 	longest := string(s[0])
-	for i := 0; i < length - 1; i++  {
+	for i := 0; i < length-1; i++ {
 		subS := palindrome(s, i)
 		if len(subS) > len(longest) {
 			longest = subS
@@ -65,7 +66,8 @@ func reference2LongestPalindrome(s string) string {
 }
 
 func palindrome(s string, mid int) string {
-	l := mid - 1; r := mid + 1
+	l := mid - 1
+	r := mid + 1
 	length := len(s)
 	for r < length && s[r] == s[mid] {
 		r++
@@ -74,5 +76,5 @@ func palindrome(s string, mid int) string {
 		l--
 		r++
 	}
-	return s[l+1:r]
+	return s[l+1 : r]
 }

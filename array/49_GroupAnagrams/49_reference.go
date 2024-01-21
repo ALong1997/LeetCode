@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 import (
 	"strconv"
@@ -11,7 +11,6 @@ import (
 
 结果: 执行用时 :0 ms 内存消耗 :2.3 MB
 */
-
 
 // 不用给字符串排序
 // Using HashMap Using characters frequency as key

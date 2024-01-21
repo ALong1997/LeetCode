@@ -1,3 +1,3 @@
-module github.com/ALong1997/leetcode
+module github.com/ALong1997/LeetCode
 
 go 1.20

@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 /*
 解法: 动态规划
@@ -16,19 +16,20 @@ package leetcode
 
 // 自顶向下方法
 var memo [][]int
-//1： true
-//0：未计算过
-//-1：false
+
+// 1： true
+// 0：未计算过
+// -1：false
 func reference1IsMatch(s string, p string) bool {
-	memo = make([][]int, len(s) + 1)
-	for i := 0; i <= len(s) ; i++ {
-		memo[i] = make([]int, len(p) + 1)
+	memo = make([][]int, len(s)+1)
+	for i := 0; i <= len(s); i++ {
+		memo[i] = make([]int, len(p)+1)
 	}
 	return dp(0, 0, s, p)
 }
 
-func dp(i ,j int, s, p string) bool {
-	if memo[i][j] != 0  {
+func dp(i, j int, s, p string) bool {
+	if memo[i][j] != 0 {
 		return memo[i][j] == 1
 	}
 	flag := false
@@ -36,7 +37,7 @@ func dp(i ,j int, s, p string) bool {
 		flag = i == len(s)
 	} else {
 		firstMatch := i < len(s) && (p[j] == s[i] || p[j] == '.')
-		if j + 1 < len(p) && p[j+1] == '*' {
+		if j+1 < len(p) && p[j+1] == '*' {
 			flag = dp(i, j+2, s, p) || firstMatch && dp(i+1, j, s, p)
 		} else {
 			flag = firstMatch && dp(i+1, j+1, s, p)
@@ -49,19 +50,18 @@ func dp(i ,j int, s, p string) bool {
 	return flag
 }
 
-
 // 自底向上方法
 func reference2IsMatch(s string, p string) bool {
-	memo := make([][]bool, len(s) + 1)
-	for i := 0; i <= len(s) ; i++ {
-		memo[i] = make([]bool, len(p) + 1)
+	memo := make([][]bool, len(s)+1)
+	for i := 0; i <= len(s); i++ {
+		memo[i] = make([]bool, len(p)+1)
 	}
 	memo[len(s)][len(p)] = true
 
-	for i := len(s); i >= 0 ; i-- {
-		for j := len(p) - 1; j >= 0 ; j-- {
+	for i := len(s); i >= 0; i-- {
+		for j := len(p) - 1; j >= 0; j-- {
 			firstMatch := i < len(s) && (p[j] == s[i] || p[j] == '.')
-			if j + 1 < len(p) && p[j+1] == '*' {
+			if j+1 < len(p) && p[j+1] == '*' {
 				memo[i][j] = memo[i][j+2] || firstMatch && memo[i+1][j]
 			} else {
 				memo[i][j] = firstMatch && memo[i+1][j+1]

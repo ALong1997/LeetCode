@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 /*
 解法: 一个长度为 m 的数组，有 0 到 m 总共 m + 1 个位置可以切。

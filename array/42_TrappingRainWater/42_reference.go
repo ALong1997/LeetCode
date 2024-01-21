@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 /*
 解法: 动态编程
@@ -33,7 +33,7 @@ func referenceTrap(height []int) int {
 	}
 
 	maxRight[length-1] = height[length-1]
-	for i := length-2; i >= 0; i-- {
+	for i := length - 2; i >= 0; i-- {
 		if height[i] < maxRight[i+1] {
 			maxRight[i] = maxRight[i+1]
 		} else {

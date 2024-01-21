@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 import (
 	"fmt"
@@ -22,18 +22,18 @@ func Test_Problem14(t *testing.T) {
 	qs := []question14{{
 		para14: para14{[]string{"flower", "flow", "flight"}},
 		ans14:  ans14{"fl"},
-	},{
+	}, {
 		para14: para14{[]string{"dog", "racecar", "car"}},
 		ans14:  ans14{""},
-	},{
+	}, {
 		para14: para14{[]string{"a"}},
 		ans14:  ans14{"a"},
-	},{
+	}, {
 		para14: para14{[]string{}},
 		ans14:  ans14{""},
 	}}
 
-	fmt.Printf("------------------------Leetcode Problem 14------------------------\n")
+	fmt.Printf("------------------------LeetCode Problem 14------------------------\n")
 
 	for _, q := range qs {
 		a, p := q.ans14, q.para14

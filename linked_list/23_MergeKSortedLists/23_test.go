@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 import (
 	"fmt"
@@ -40,13 +40,12 @@ func Test_Problem23(t *testing.T) {
 	a1_2 := &listNode{1, a1_3}
 	a1_1 := &listNode{1, a1_2}
 
-
 	qs := []question23{{
 		para23: para23{[]*listNode{l1_1, l2_1, l3_1}},
 		ans23:  ans23{a1_1},
 	}}
 
-	fmt.Printf("------------------------Leetcode Problem 23------------------------\n")
+	fmt.Printf("------------------------LeetCode Problem 23------------------------\n")
 
 	for _, q := range qs {
 		a, p := q.ans23, q.para23
@@ -66,9 +65,9 @@ func Test_Problem23(t *testing.T) {
 }
 
 // 输出 listNode ：(2 -> 4 -> 3)
-func (l *listNode) printlistNode()  {
+func (l *listNode) printlistNode() {
 	fmt.Print("(")
-	for ; l != nil ; l = l.Next {
+	for ; l != nil; l = l.Next {
 		fmt.Print(l.Val)
 		if l.Next != nil {
 			fmt.Print(" -> ")

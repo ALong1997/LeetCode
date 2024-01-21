@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 /*
 解法: 字典序

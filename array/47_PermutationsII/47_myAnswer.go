@@ -1,4 +1,5 @@
-package leetcode
+package LeetCode
+
 /*
 给定一个 可包含重复数字 的序列，返回所有不重复的全排列。
 */

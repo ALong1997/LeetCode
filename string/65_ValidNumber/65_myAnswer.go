@@ -1,4 +1,5 @@
-package leetcode
+package LeetCode
+
 /*
 验证给定的字符串是否可以解释为十进制数字。
 

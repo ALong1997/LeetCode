@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 /*
 解法: 贪心
@@ -12,15 +12,14 @@ package leetcode
 结果: 执行用时 :12 ms 内存消耗 :4.2 MB
 */
 
-
 func referenceCanJump(nums []int) bool {
 	var length, maxIndex = len(nums), 0
 	for i := 0; i < length; i++ {
 		if i <= maxIndex {
-			if maxIndex < i + nums[i] {
+			if maxIndex < i+nums[i] {
 				maxIndex = i + nums[i]
 			}
-			if maxIndex >= length - 1 {
+			if maxIndex >= length-1 {
 				return true
 			}
 		}

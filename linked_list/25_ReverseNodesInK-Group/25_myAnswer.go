@@ -1,4 +1,5 @@
-package leetcode
+package LeetCode
+
 /*
 给你一个链表，每 k 个节点一组进行翻转，请你返回翻转后的链表。
 k 是一个正整数，它的值小于或等于链表的长度。
@@ -18,13 +19,13 @@ k 是一个正整数，它的值小于或等于链表的长度。
 
 // Definition for singly-linked list.
 type listNode struct {
-	Val int
+	Val  int
 	Next *listNode
 }
 
 func reverseKGroup(head *listNode, k int) *listNode {
 	dummy := &listNode{
-		Val: -1,
+		Val:  -1,
 		Next: head,
 	}
 	pre := dummy
@@ -34,12 +35,12 @@ func reverseKGroup(head *listNode, k int) *listNode {
 		n := k
 		// 找出下个部分的头
 		nextPart := cur
-		for nextPart != nil && n > 0{
+		for nextPart != nil && n > 0 {
 			nextPart = nextPart.Next
 			n--
 		}
 		// 如果已经不够 k 个说明可以返回了
-		if n > 0{
+		if n > 0 {
 			break
 		} else {
 			n = k
@@ -47,7 +48,7 @@ func reverseKGroup(head *listNode, k int) *listNode {
 		// 保存下个 Pre 节点
 		nextPre := cur
 
-		for n > 0{
+		for n > 0 {
 			// 保存下当前元素的下一个元素
 			temp := cur.Next
 			// 接上下个头

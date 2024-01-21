@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 /*
 解法: 分治 快速幂 + 迭代
@@ -24,7 +24,6 @@ n = 2^i0 + 2^i1 + ... + 2^ik
 结果: 执行用时 :0 ms 内存消耗 :2 MB
 */
 
-
 func referenceMyPow(x float64, n int) float64 {
 	if n >= 0 {
 		return referenceQuickMul(x, n)
@@ -38,7 +37,7 @@ func referenceQuickMul(x float64, N int) float64 {
 	xContribute := x
 	// 在对 N 进行二进制拆分的同时计算答案
 	for N > 0 {
-		if N % 2 == 1 {
+		if N%2 == 1 {
 			// 如果 N 二进制表示的最低位为 1，那么需要计入贡献
 			ans *= xContribute
 		}

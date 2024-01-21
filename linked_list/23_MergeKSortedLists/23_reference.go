@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 /*
 解法: 考虑归并排序思想优化myAnswer，用分治的方法进行合并。
@@ -16,7 +16,7 @@ package leetcode
 */
 
 func referenceMergeKLists(lists []*listNode) *listNode {
-	return merge(lists, 0, len(lists)- 1)
+	return merge(lists, 0, len(lists)-1)
 }
 
 func merge(lists []*listNode, l, r int) *listNode {
@@ -26,6 +26,6 @@ func merge(lists []*listNode, l, r int) *listNode {
 	if l > r {
 		return nil
 	}
-	mid := (l+r) >> 1
+	mid := (l + r) >> 1
 	return mergeTwoLists(merge(lists, l, mid), merge(lists, mid+1, r))
 }

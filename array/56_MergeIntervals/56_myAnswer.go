@@ -1,4 +1,5 @@
-package leetcode
+package LeetCode
+
 /*
 给出一个区间的集合，请合并所有重叠的区间。
 */

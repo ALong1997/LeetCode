@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 /*
 解法: 分治
@@ -34,16 +34,15 @@ package leetcode
 结果: 执行用时 :0 ms 内存消耗 :2 MB
 */
 
-
 func referenceMaxSubArray(nums []int) int {
-	return get(nums, 0, len(nums) - 1).mSum
+	return get(nums, 0, len(nums)-1).mSum
 }
 
 func pushUp(l, r status) status {
 	iSum := l.iSum + r.iSum
-	lSum := max(l.lSum, l.iSum + r.lSum)
-	rSum := max(r.rSum, r.iSum + l.rSum)
-	mSum := max(max(l.mSum, r.mSum), l.rSum + r.lSum)
+	lSum := max(l.lSum, l.iSum+r.lSum)
+	rSum := max(r.rSum, r.iSum+l.rSum)
+	mSum := max(max(l.mSum, r.mSum), l.rSum+r.lSum)
 	return status{lSum, rSum, mSum, iSum}
 }
 
@@ -53,7 +52,7 @@ func get(nums []int, l, r int) status {
 	}
 	m := (l + r) >> 1
 	lSub := get(nums, l, m)
-	rSub := get(nums, m + 1, r)
+	rSub := get(nums, m+1, r)
 	return pushUp(lSub, rSub)
 }
 

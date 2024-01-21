@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 /*
 解法: 动态规划
@@ -7,7 +7,6 @@ package leetcode
 
 结果: 执行用时 :20 ms 内存消耗 :6.1 MB
 */
-
 
 func referenceIsMatch(s string, p string) bool {
 	var col, row = len(s), len(p)

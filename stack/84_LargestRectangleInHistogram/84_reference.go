@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 /*
 解法: 单调栈（基于 枚举「高」 的优化）
@@ -37,7 +37,7 @@ func referenceLargestRectangleArea(heights []int) int {
 	}
 	ans := 0
 	for i := 0; i < n; i++ {
-		ans = max(ans, (right[i] - left[i] - 1) * heights[i])
+		ans = max(ans, (right[i]-left[i]-1)*heights[i])
 	}
 	return ans
 }

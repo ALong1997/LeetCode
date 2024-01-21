@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 import (
 	"fmt"
@@ -11,7 +11,7 @@ type question35 struct {
 }
 
 type para35 struct {
-	nums []int
+	nums   []int
 	target int
 }
 
@@ -31,11 +31,11 @@ func Test_Problem35(t *testing.T) {
 		ans35:  ans35{4},
 	}}
 
-	fmt.Printf("------------------------Leetcode Problem 35------------------------\n")
+	fmt.Printf("------------------------LeetCode Problem 35------------------------\n")
 
 	for _, q := range qs {
 		a, p := q.ans35, q.para35
-		fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, searchInsert(p.nums,p.target), a)
+		fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, searchInsert(p.nums, p.target), a)
 		//fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, referenceLongestValidParentheses(p.s), a)
 		//fmt.Printf("【input】:%v       【output】:%v       【answer】:%v\n", p, reference2LongestValidParentheses(p.s), a)
 	}

@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 /*
 解法: 动态规划
@@ -15,14 +15,13 @@ package leetcode
 结果: 执行用时 :0 ms 内存消耗 :1.9 MB
 */
 
-
 func referenceUniquePaths(m int, n int) int {
-	cur := make([]int,n)
-	for i:=0;i<n;i++{
+	cur := make([]int, n)
+	for i := 0; i < n; i++ {
 		cur[i] = 1
 	}
-	for i:=1;i<m;i++{
-		for j:=1;j<n;j++{
+	for i := 1; i < m; i++ {
+		for j := 1; j < n; j++ {
 			cur[j] += cur[j-1]
 		}
 	}

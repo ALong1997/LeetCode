@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 /*
 解法: 索引作为哈希表
@@ -48,7 +48,7 @@ func referenceFirstMissingPositive(nums []int) int {
 		return 1
 	}
 
-	for i := 0 ; i < length; i++ {
+	for i := 0; i < length; i++ {
 		var a = nums[i]
 		if a < 0 {
 			a = -a
@@ -60,7 +60,7 @@ func referenceFirstMissingPositive(nums []int) int {
 		}
 	}
 
-	for i := 1 ; i < length; i++ {
+	for i := 1; i < length; i++ {
 		if nums[i] > 0 {
 			return i
 		}

@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 import (
 	"fmt"
@@ -12,7 +12,7 @@ type question61 struct {
 
 type para61 struct {
 	head *listNode
-	k int
+	k    int
 }
 
 type ans61 struct {
@@ -33,7 +33,6 @@ func Test_Problem61(t *testing.T) {
 	a1_2 := &listNode{5, a1_3}
 	a1_1 := &listNode{4, a1_2}
 
-
 	l2_3 := &listNode{2, nil}
 	l2_2 := &listNode{1, l2_3}
 	l2_1 := &listNode{0, l2_2}
@@ -45,18 +44,18 @@ func Test_Problem61(t *testing.T) {
 	qs := []question61{{
 		para61: para61{l1_1, 2},
 		ans61:  ans61{a1_1},
-	} , {
+	}, {
 		para61: para61{l2_1, 4},
 		ans61:  ans61{a2_1},
 	}}
 
-	fmt.Printf("------------------------Leetcode Problem 61------------------------\n")
+	fmt.Printf("------------------------LeetCode Problem 61------------------------\n")
 
 	for _, q := range qs {
 		a, p := q.ans61, q.para61
 		fmt.Print("【input】:")
 		p.head.printlistNode()
-		fmt.Print(p.k,"       【output】:")
+		fmt.Print(p.k, "       【output】:")
 		rotateRight(p.head, p.k).printlistNode()
 		fmt.Print("       【answer】:")
 		a.ans.printlistNode()
@@ -68,9 +67,9 @@ func Test_Problem61(t *testing.T) {
 }
 
 // 输出 listNode ：(2 -> 4 -> 3)
-func (l *listNode) printlistNode()  {
+func (l *listNode) printlistNode() {
 	fmt.Print("(")
-	for ; l != nil ; l = l.Next {
+	for ; l != nil; l = l.Next {
 		fmt.Print(l.Val)
 		if l.Next != nil {
 			fmt.Print(" -> ")

@@ -1,4 +1,5 @@
-package leetcode
+package LeetCode
+
 /*
 合并 k 个排序链表，返回合并后的排序链表。请分析和描述算法的复杂度。
 */
@@ -16,13 +17,13 @@ package leetcode
 
 // Definition for singly-linked list.
 type listNode struct {
-	Val int
+	Val  int
 	Next *listNode
 }
 
 func mergeKLists(lists []*listNode) *listNode {
 	var ans *listNode
-	for i := 0; i < len(lists) ; i++ {
+	for i := 0; i < len(lists); i++ {
 		ans = mergeTwoLists(ans, lists[i])
 	}
 	return ans

@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 /*
 解法: 按层模拟
@@ -22,15 +22,14 @@ package leetcode
 结果: 执行用时 :0 ms 内存消耗 :2.1 MB
 */
 
-
 func referenceSpiralOrder(matrix [][]int) []int {
 	if len(matrix) == 0 || len(matrix[0]) == 0 {
 		return []int{}
 	}
 	var (
-		rows, columns = len(matrix), len(matrix[0])
-		order = make([]int, rows * columns)
-		index = 0
+		rows, columns            = len(matrix), len(matrix[0])
+		order                    = make([]int, rows*columns)
+		index                    = 0
 		left, right, top, bottom = 0, columns - 1, 0, rows - 1
 	)
 

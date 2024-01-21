@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 import (
 	"fmt"
@@ -31,7 +31,7 @@ func Test_Problem60(t *testing.T) {
 		ans60:  ans60{"132"},
 	}}
 
-	fmt.Printf("------------------------Leetcode Problem 60------------------------\n")
+	fmt.Printf("------------------------LeetCode Problem 60------------------------\n")
 
 	for _, q := range qs {
 		a, p := q.ans60, q.para60

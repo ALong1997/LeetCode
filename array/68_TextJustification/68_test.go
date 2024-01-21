@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 import (
 	"fmt"
@@ -11,7 +11,7 @@ type question68 struct {
 }
 
 type para68 struct {
-	words []string
+	words    []string
 	maxWidth int
 }
 
@@ -21,21 +21,21 @@ type ans68 struct {
 
 func Test_Problem68(t *testing.T) {
 	qs := []question68{{
-		para68: para68{[]string{"This", "is", "an", "example", "of", "text", "justification."},16},
-		ans68:  ans68{[]string{
+		para68: para68{[]string{"This", "is", "an", "example", "of", "text", "justification."}, 16},
+		ans68: ans68{[]string{
 			"This    is    an",
 			"example  of text",
 			"justification.  "}},
 	}, {
-		para68: para68{[]string{"What","must","be","acknowledgment","shall","be"},16},
-		ans68:  ans68{[]string{
+		para68: para68{[]string{"What", "must", "be", "acknowledgment", "shall", "be"}, 16},
+		ans68: ans68{[]string{
 			"What   must   be",
 			"acknowledgment  ",
 			"shall be        "}},
 	}, {
-		para68: para68{[]string{"Science","is","what","we","understand","well","enough","to","explain",
-			"to","a","computer.","Art","is","everything","else","we","do"},20},
-		ans68:  ans68{[]string{
+		para68: para68{[]string{"Science", "is", "what", "we", "understand", "well", "enough", "to", "explain",
+			"to", "a", "computer.", "Art", "is", "everything", "else", "we", "do"}, 20},
+		ans68: ans68{[]string{
 			"Science  is  what we",
 			"understand      well",
 			"enough to explain to",
@@ -44,7 +44,7 @@ func Test_Problem68(t *testing.T) {
 			"do                  "}},
 	}}
 
-	fmt.Printf("------------------------Leetcode Problem 68------------------------\n")
+	fmt.Printf("------------------------LeetCode Problem 68------------------------\n")
 
 	for _, q := range qs {
 		a, p := q.ans68, q.para68

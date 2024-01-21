@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 /*
 解法: Rabin Karp - 滚动哈希 同时也是 Golang 源码中 strings.index 采用的算法
@@ -42,7 +42,6 @@ function RabinKarp(string s[1..n], string pattern[1..m])
 
 结果: 执行用时 :0 ms 内存消耗 :2.3 MB
 */
-
 
 // primeRK is the prime base used in Rabin-Karp algorithm.
 const primeRK = 16777619

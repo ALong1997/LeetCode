@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 /*
 解法:不需要额外的空间
@@ -11,7 +11,6 @@ package leetcode
 结果: 执行用时 :0 ms 内存消耗 :2.3 MB
 */
 
-
 func reference2LongestValidParentheses(s string) int {
 	var left, right, ans int
 	for i := 0; i < len(s); i++ {
@@ -21,7 +20,7 @@ func reference2LongestValidParentheses(s string) int {
 			right++
 		}
 		if left == right {
-			if ans < 2 * right {
+			if ans < 2*right {
 				ans = 2 * right
 			}
 		} else if right >= left {
@@ -36,7 +35,7 @@ func reference2LongestValidParentheses(s string) int {
 			right++
 		}
 		if left == right {
-			if ans < 2 * left {
+			if ans < 2*left {
 				ans = 2 * left
 			}
 		} else if left >= right {

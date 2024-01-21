@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 /*
 解法: 参考T62
@@ -19,7 +19,7 @@ func referenceUniquePathsWithObstacles(obstacleGrid [][]int) int {
 				f[j] = 0
 				continue
 			}
-			if j - 1 >= 0 && obstacleGrid[i][j-1] == 0 {
+			if j-1 >= 0 && obstacleGrid[i][j-1] == 0 {
 				f[j] += f[j-1]
 			}
 		}

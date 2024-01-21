@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 import (
 	"fmt"
@@ -11,7 +11,7 @@ type question51 struct {
 }
 
 type para51 struct {
-	n	int
+	n int
 }
 
 type ans51 struct {
@@ -24,7 +24,7 @@ func Test_Problem51(t *testing.T) {
 		ans51:  ans51{[][]string{{".Q..", "...Q", "Q...", "..Q."}, {"..Q.", "Q...", "...Q", ".Q.."}}},
 	}}
 
-	fmt.Printf("------------------------Leetcode Problem 51------------------------\n")
+	fmt.Printf("------------------------LeetCode Problem 51------------------------\n")
 
 	for _, q := range qs {
 		a, p := q.ans51, q.para51

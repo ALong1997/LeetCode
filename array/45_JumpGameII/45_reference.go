@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 /*
 解法: 贪心算法  这道题是典型的贪心算法，通过局部最优解得到全局最优解。
@@ -12,14 +12,13 @@ package leetcode
 结果: 执行用时 :12 ms 内存消耗 :4.2 MB
 */
 
-
 func referenceJump(nums []int) int {
 	length := len(nums)
 	end := 0
 	maxPosition := 0
 	steps := 0
-	for i := 0; i < length - 1; i++ {
-		maxPosition = max(maxPosition, i + nums[i])
+	for i := 0; i < length-1; i++ {
+		maxPosition = max(maxPosition, i+nums[i])
 		if i == end {
 			end = maxPosition
 			steps++

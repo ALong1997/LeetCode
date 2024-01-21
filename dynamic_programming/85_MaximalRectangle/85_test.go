@@ -1,4 +1,4 @@
-package leetcode
+package LeetCode
 
 import (
 	"fmt"
@@ -20,11 +20,11 @@ type ans85 struct {
 
 func Test_Problem85(t *testing.T) {
 	qs := []question85{{
-		para85: para85{[][]byte{{'1','0','1','0','0'},{'1','0','1','1','1'},{'1','1','1','1','1'},{'1','0','0','1','0'}}},
+		para85: para85{[][]byte{{'1', '0', '1', '0', '0'}, {'1', '0', '1', '1', '1'}, {'1', '1', '1', '1', '1'}, {'1', '0', '0', '1', '0'}}},
 		ans85:  ans85{6},
 	}}
 
-	fmt.Printf("------------------------Leetcode Problem 85------------------------\n")
+	fmt.Printf("------------------------LeetCode Problem 85------------------------\n")
 
 	for _, q := range qs {
 		a, p := q.ans85, q.para85

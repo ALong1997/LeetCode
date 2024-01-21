@@ -1,4 +1,5 @@
-package leetcode
+package LeetCode
+
 /*
 给定一个整数 n，返回 n 皇后不同的解决方案的数量。
 */
