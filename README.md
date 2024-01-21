@@ -28,7 +28,7 @@
 ## Directory Structure
 > **[classification](#Classification)**
 >> **question**
->>> * **README**
->>> * **answer**
->>> * **answer_test**
->>> * **reference**
+>>> * **README** _question and solution_
+>>> * **answer** _my solution_
+>>> * **answer_test** _my solution test_
+>>> * **reference** _better solution than my solution_

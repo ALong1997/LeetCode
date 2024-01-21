@@ -44,8 +44,17 @@ Constraints:
 
 Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 
-## Solution
+## Answer
+### Solution
 
-这道题最优的做法时间复杂度是 O(n)。
+```
+target = a + b -> b = target - a
+```
 
-顺序扫描数组，对每一个元素，在 map 中找能组合给定值的另一半数字，如果找到了，直接返回 2 个数字的下标即可。如果找不到，就把这个数字存入 map 中，等待扫到“另一半”数字的时候，再取出来返回结果。
+Range `nums` sequentially, matching `b` for each `a`.
+
+### Runtime
+0 ms
+
+### Memory Usage
+4.02 MB
