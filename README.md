@@ -1,19 +1,34 @@
 # leetcode  
-[leetcode Online Judge] (https://leetcode.com/) is a website containing many algorithm questions. Most of them are real interview questions of Google, Facebook, LinkedIn, Apple, etc. 
+[LeetCode Online Judge](https://leetcode.com/) is a website containing many **algorithm questions**. Most of them are real interview questions of **Google, Facebook, LinkedIn, Apple**, etc. and it always help to sharp our algorithm Skills. Level up your coding skills and quickly land a job. This is the best place to expand your knowledge and get prepared for your next interview. This repo shows my solutions in Go with the code style strictly follows the [Google Golang Style Guide](https://github.com/golang/go/wiki/CodeReviewComments). Please feel free to reference and **STAR** to support this repo, thank you!
 
 ## Language  
-***Golang : go 1.16***
+***Golang : go 1.20***
 
-## Directory Structure  
-> **Difficulty**
->> **Problem**
->>> * **myAnswer**
+## Classification
+* array
+* string
+* two pointers
+* linked list
+* stack
+* tree
+* dynamic programming
+* backtracking
+* depth first search
+* breadth first search
+* binary search
+* math
+* hash table
+* sort
+* bit manipulation
+* union find
+* sliding window
+* segment tree
+* binary indexed tree
+
+## Directory Structure
+> **[classification](#Classification)**
+>> **question**
+>>> * **question**
+>>> * **answer**
+>>> * **answer_test**
 >>> * **reference**
->>> * **test**
-
-## Introduce  
-My Answer is the best answer I can think of.
-
-Reference Answer is a better answer than my answer I can find.
-
-Answer is Updating...

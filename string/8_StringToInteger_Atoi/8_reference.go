@@ -23,16 +23,17 @@ end	          end	    end	      end	       end
 
 // 状态
 const (
-	startState = iota	// 开头空格
-	signedState			// 判断符号
-	inNumberState		// 数字处理
-	endState			// 无效转换，返回0
+	startState    = iota // 开头空格
+	signedState          // 判断符号
+	inNumberState        // 数字处理
+	endState             // 无效转换，返回0
 )
+
 var stateMachine = [][]int{
-		startState: {startState, signedState, inNumberState, endState},
-		signedState: {endState, endState, inNumberState, endState},
-		inNumberState: {endState, endState, inNumberState, endState},
-		endState: {endState, endState, endState, endState}}
+	startState:    {startState, signedState, inNumberState, endState},
+	signedState:   {endState, endState, inNumberState, endState},
+	inNumberState: {endState, endState, inNumberState, endState},
+	endState:      {endState, endState, endState, endState}}
 
 func referenceMyAtoi(str string) int {
 	currentState := startState
@@ -49,7 +50,7 @@ func referenceMyAtoi(str string) int {
 				sign = 1
 			}
 		case inNumberState:
-			res = res*10 + int(str[i] - '0')
+			res = res*10 + int(str[i]-'0')
 			if withSign := res * sign; withSign > math.MaxInt32 {
 				return math.MaxInt32
 			} else if withSign < math.MinInt32 {
@@ -71,7 +72,7 @@ func getState(c byte) int {
 	if c == '+' || c == '-' {
 		return signedState
 	}
-	if c - '0' <= 9 {
+	if c-'0' <= 9 {
 		return inNumberState
 	}
 	return endState
