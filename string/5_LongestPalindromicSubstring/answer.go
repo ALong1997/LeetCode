@@ -1,12 +1,5 @@
 package LeetCode
 
-//给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。
-
-/*
-解法: 暴力解
-
-结果: 执行用时 :1116 ms 内存消耗 :2.2 MB
-*/
 func longestPalindrome(s string) string {
 	if s == "" {
 		return ""
@@ -14,21 +7,24 @@ func longestPalindrome(s string) string {
 	length := len(s)
 	longest := string(s[0])
 	for i := 0; i < length-1; i++ {
-		for j := i + 1; j < length; j++ {
-			if isPalindromic(s[i:j+1]) && j-i+1 > len(longest) {
-				longest = s[i : j+1]
-			}
+		subS := palindrome(s, i)
+		if len(subS) > len(longest) {
+			longest = subS
 		}
 	}
 	return longest
 }
 
-func isPalindromic(s string) bool {
+func palindrome(s string, mid int) string {
+	l := mid - 1
+	r := mid + 1
 	length := len(s)
-	for i := 0; i < length/2; i++ {
-		if s[i] != s[length-i-1] {
-			return false
-		}
+	for r < length && s[r] == s[mid] {
+		r++
 	}
-	return true
+	for l >= 0 && r < length && s[l] == s[r] {
+		l--
+		r++
+	}
+	return s[l+1 : r]
 }
